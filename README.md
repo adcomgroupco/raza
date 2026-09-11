@@ -1,4 +1,4 @@
-# Raza.do — Centro de documentos
+# Raza.do, Centro de documentos
 
 Portada documental y experiencias interactivas para explorar la estrategia de Raza.do.
 
@@ -14,10 +14,41 @@ No requiere instalación ni proceso de compilación.
 - `index.html`: centro de documentos y punto de entrada del proyecto.
 - `flow-digital.html`: flow digital interactivo con filtros, mix por objetivo, ranking por canal, funnel de registros→FTD y tendencia mensual de resultados.
 - `tendencias-busqueda.html`: análisis interactivo de tendencias de búsqueda para lotería, casino, apuestas deportivas y verticales específicas en República Dominicana.
-- `styles.css`: sistema visual en Poppins, inspirado en el PDF estratégico de Raza.do.
-- `app.js`: datos, filtros, gráficos y vistas interactivas.
-- `tendencias.css` y `tendencias.js`: estilos, datos seleccionados y visualización del análisis de búsquedas.
-- `assets/launch-energy.jpg`: imagen extraída del PDF maestro proporcionado para el proyecto.
+- `styles.css`: capa de diseño de `flow-digital.html`, sobre el sistema Adcom.
+- `app.js`: datos, filtros, gráficos y vistas interactivas del flow.
+- `tendencias.css`: capa de diseño de `tendencias-busqueda.html`, sobre el sistema.
+- `tendencias.js`: datos y visualización del análisis de búsquedas.
+- `assets/css/adcom.css` y `assets/js/adcom.js`: el sistema de diseño de Adcom.
+  **Son copias generadas.** No se editan aquí: se editan en `adcom/sistema/` y se
+  reparten con `sync.ps1`. La documentación del sistema está en `adcom/sistema/DESIGN.md`.
+- `assets/launch-energy.jpg`: imagen extraída del PDF maestro del proyecto.
+
+## Diseño
+
+Este repo usa el sistema de diseño de Adcom en **suelo tinta**: fondo oscuro,
+Poppins, y el amarillo de Adcom como único acento. El suelo se declara en el
+`<html>` de cada archivo:
+
+```html
+<html lang="es" data-suelo="tinta">
+```
+
+Antes de cambiar cualquier estilo, lee `adcom/sistema/DESIGN.md`. En corto:
+
+- El color y la estructura viven en `assets/css/adcom.css` y se comparten con los
+  otros 13 repos. Un cambio ahí es un cambio en todos.
+- `styles.css` y `tendencias.css` solo llevan la geometría de los componentes
+  propios de cada documento. No declaran tokens, ni tipografía, ni suelo, y no
+  fijan ningún color en hex: todo sale de `var(--…)`. Por eso cambiarle el suelo
+  al documento no obliga a tocarlos.
+- Sobre tinta el amarillo de marca es también el amarillo de dato
+  (`--accent-fg` resuelve a `#ffd400`, 14.2:1). Eso es lo que le da presencia.
+- Los gráficos con varias series usan la escala de 3 ranuras del sistema por
+  objetivo (`--serie-1` Performance, `--serie-2` Awareness, `--serie-3`
+  Consideración), validada para daltonismo y escalonada por suelo. El amarillo
+  de marca no entra a esa escala.
+- Un documento **no alterna de suelo**. Para un momento invertido está `.slab`,
+  una vez y con los tokens `--inv-*`.
 
 ## Fuente de cifras
 

@@ -1,10 +1,10 @@
 const MONTHS = [
-  { id: "sep", label: "Septiembre", short: "SEP", range: "25–30 sep", stage: "Expectativa", focus: "Seis días de teaser y countdown: ruido sin producto, antes de abrir la marca." },
-  { id: "oct", label: "Octubre", short: "OCT", range: "1–31 oct", stage: "Lanzamiento", focus: "Salida en vivo el 1 de octubre: máximo alcance y primeras rutas de conversión." },
-  { id: "nov", label: "Noviembre", short: "NOV", range: "1–30 nov", stage: "Mantenimiento", focus: "Transición de consideración hacia performance." },
-  { id: "dic", label: "Diciembre", short: "DIC", range: "1–31 dic", stage: "Mantenimiento", focus: "Conversión alrededor de eventos y momentos de alta intención." },
-  { id: "ene", label: "Enero", short: "ENE", range: "1–31 ene", stage: "Mantenimiento", focus: "Escalar adquisición y retargeting con los aprendizajes acumulados." },
-  { id: "feb", label: "Febrero", short: "FEB", range: "1–28 feb", stage: "Mantenimiento", focus: "Máxima presión de performance dentro del mantenimiento." }
+  { id: "sep", label: "Septiembre", short: "SEP", range: "desde 28 sep", stage: "Expectativa", focus: "Teaser y countdown desde el 28 de septiembre: ruido sin producto, antes de abrir la marca." },
+  { id: "oct", label: "Octubre", short: "OCT", range: "desde 5 oct", stage: "Lanzamiento", focus: "Salida en vivo el 5 de octubre: máximo alcance y primeras rutas de conversión." },
+  { id: "nov", label: "Noviembre", short: "NOV", range: "1 a 30 nov", stage: "Mantenimiento", focus: "Transición de consideración hacia performance." },
+  { id: "dic", label: "Diciembre", short: "DIC", range: "1 a 31 dic", stage: "Mantenimiento", focus: "Conversión alrededor de eventos y momentos de alta intención." },
+  { id: "ene", label: "Enero", short: "ENE", range: "1 a 31 ene", stage: "Mantenimiento", focus: "Escalar adquisición y retargeting con los aprendizajes acumulados." },
+  { id: "feb", label: "Febrero", short: "FEB", range: "1 a 28 feb", stage: "Mantenimiento", focus: "Máxima presión de performance dentro del mantenimiento." }
 ];
 
 const CHANNELS = [
@@ -12,8 +12,8 @@ const CHANNELS = [
     id: "meta-reach", name: "Meta Reach", initials: "MR", role: "Support", objective: "Awareness",
     action: "Conocer, recordar y buscar la marca", verticals: ["Marca", "Deportivas", "Casino", "Lotería", "Virtuales"],
     kpi: "Alcance 18+ y frecuencia", secondary: "Reach único, frecuencia, VTR y búsquedas de marca",
-    formats: ["Reels", "Stories", "Video 6–15s", "Reach & Frequency"], costType: "CPM", cost: 6.5, unit: "impresiones",
-    note: "Controlar saturación y renovar creatividades cada dos semanas.", color: "#6f91ff",
+    formats: ["Reels", "Stories", "Video 6 a 15s", "Reach & Frequency"], costType: "CPM", cost: 6.5, unit: "impresiones",
+    note: "Controlar saturación y renovar creatividades cada dos semanas.", color: "#eb6834",
     budgets: { sep: 22000, oct: 32000, nov: 12000, dic: 7000, ene: 4000, feb: 4000 }
   },
   {
@@ -22,7 +22,7 @@ const CHANNELS = [
     kpi: "Registros + FTD", secondary: "CPR, tasa registro→FTD, valor depositado y ROAS",
     formats: ["Reels", "Stories", "Feed", "Retargeting", "Deep links"], costType: "CPA FTD", cost: 45, unit: "FTD",
     registrationCost: 13.5, registrationRate: 0.30,
-    note: "Principal canal de FTD. Arranca el 1 de octubre, cuando ya se puede registrar y depositar.", color: "#315cff",
+    note: "Principal canal de FTD. Arranca el 5 de octubre, cuando ya se puede registrar y depositar.", color: "#2a78d6",
     budgets: { sep: 0, oct: 33000, nov: 28000, dic: 32000, ene: 35000, feb: 37000 }
   },
   {
@@ -31,7 +31,7 @@ const CHANNELS = [
     kpi: "Registros + FTD", secondary: "CPR, VTR, CTR y tasa registro→FTD",
     formats: ["In-feed", "Spark Ads", "Creator whitelisting", "Retargeting"], costType: "CPA FTD", cost: 60, unit: "FTD",
     registrationCost: 15, registrationRate: 0.25,
-    note: "Segundo canal de FTD: lenguaje local, tutorial y prueba social. Enciende con el lanzamiento.", color: "#9a71ff",
+    note: "Segundo canal de FTD: lenguaje local, tutorial y prueba social. Enciende con el lanzamiento.", color: "#2a78d6",
     budgets: { sep: 0, oct: 25000, nov: 17000, dic: 18000, ene: 19000, feb: 21000 }
   },
   {
@@ -39,7 +39,7 @@ const CHANNELS = [
     action: "Generar notoriedad y búsqueda de marca", verticals: ["Marca"],
     kpi: "Alcance y vistas", secondary: "Frecuencia, VTR, búsquedas de marca y visitas asistidas",
     formats: ["TopView", "Prime Time", "Teaser", "Reveal", "Manifiesto"], costType: "CPV", cost: 0.01, unit: "vistas",
-    note: "Teaser el 25 de septiembre y reveal el 1 de octubre. Sin expectativa directa de FTD.", color: "#ff5073",
+    note: "Teaser el 28 de septiembre y reveal el 5 de octubre. Sin expectativa directa de FTD.", color: "#eb6834",
     budgets: { sep: 40000, oct: 65000, nov: 0, dic: 0, ene: 0, feb: 0 }
   },
   {
@@ -48,15 +48,15 @@ const CHANNELS = [
     kpi: "Registros + FTD", secondary: "CPR, CTR, CPC, share de búsqueda y tasa registro→FTD",
     formats: ["Search marca", "Genéricos", "Verticales", "Extensiones"], costType: "CPA FTD", cost: 43, unit: "FTD",
     registrationCost: 15.05, registrationRate: 0.35,
-    note: "Pendiente de aprobación. Si no habilita, redistribuir 60% Meta, 25% TikTok y 15% DCO.", color: "#43a9e8",
+    note: "Pendiente de aprobación. Si no habilita, redistribuir 60% Meta, 25% TikTok y 15% DCO.", color: "#2a78d6",
     budgets: { sep: 0, oct: 3000, nov: 4000, dic: 5000, ene: 6000, feb: 8000 }
   },
   {
     id: "youtube", name: "YouTube", initials: "YT", role: "Support", objective: "Consideración",
     action: "Entender la propuesta, el respaldo y la forma de uso", verticals: ["Marca", "Deportivas", "Casino"],
     kpi: "Vistas calificadas", secondary: "VTR, alcance único, lift de búsqueda y conversiones asistidas",
-    formats: ["Bumper 6s", "In-stream 15–30s", "Shorts", "Video Action"], costType: "CPV", cost: 0.017, unit: "vistas",
-    note: "Alta presión en lanzamiento; después, secuencias educativas y retargeting.", color: "#ff5c5c",
+    formats: ["Bumper 6s", "In-stream 15 a 30s", "Shorts", "Video Action"], costType: "CPV", cost: 0.017, unit: "vistas",
+    note: "Alta presión en lanzamiento; después, secuencias educativas y retargeting.", color: "#1baf7a",
     budgets: { sep: 12000, oct: 32000, nov: 7000, dic: 3000, ene: 2000, feb: 4000 }
   },
   {
@@ -64,7 +64,7 @@ const CHANNELS = [
     action: "Visitar una landing relevante según el contexto", verticals: ["Deportivas", "Lotería", "Casino"],
     kpi: "Impresiones visibles", secondary: "Viewability, CTR, visitas calificadas y conversión asistida",
     formats: ["Display dinámico", "Video contextual", "Retargeting", "Piezas por evento"], costType: "CPM", cost: 13, unit: "impresiones",
-    note: "Base always-on desde el lanzamiento, con mensajes dinámicos por calendario y resultados.", color: "#55c98a",
+    note: "Base always-on desde el lanzamiento, con mensajes dinámicos por calendario y resultados.", color: "#1baf7a",
     budgets: { sep: 0, oct: 13000, nov: 10000, dic: 10000, ene: 11000, feb: 9000 }
   },
   {
@@ -72,7 +72,7 @@ const CHANNELS = [
     action: "Entrar a la landing por momento deportivo o resultado", verticals: ["Deportivas", "Lotería"],
     kpi: "Visitas calificadas", secondary: "CTR, rebote, registro asistido y conversión asistida",
     formats: ["Web push", "Native push", "Partido", "Sorteo", "Quincena"], costType: "CPC", cost: 0.8, unit: "visitas",
-    note: "Arranca con la landing viva el 1 de octubre y funciona como puente hacia performance.", color: "#1aa872",
+    note: "Arranca con la landing viva el 5 de octubre y funciona como puente hacia performance.", color: "#1baf7a",
     budgets: { sep: 0, oct: 5000, nov: 3000, dic: 4000, ene: 4000, feb: 4000 }
   },
   {
@@ -80,7 +80,7 @@ const CHANNELS = [
     action: "Interactuar y explorar la propuesta", verticals: ["Marca", "Deportivas", "Casino"],
     kpi: "Interacciones", secondary: "Engagement rate, tiempo interactivo y visitas asistidas",
     formats: ["Expandibles", "Countdown", "Interactivos", "Alto impacto"], costType: "CPE", cost: 0.65, unit: "interacciones",
-    note: "Countdown en expectativa y alto impacto en lanzamiento; después solo las piezas eficientes.", color: "#00c5bb",
+    note: "Countdown en expectativa y alto impacto en lanzamiento; después solo las piezas eficientes.", color: "#1baf7a",
     budgets: { sep: 5000, oct: 5000, nov: 3000, dic: 3000, ene: 1000, feb: 1000 }
   },
   {
@@ -88,7 +88,7 @@ const CHANNELS = [
     action: "Ver, escuchar e interactuar con contenido 18+", verticals: ["Deportivas", "Virtuales", "Casino"],
     kpi: "Impresiones / video", secondary: "Minutos vistos, chat engagement y clics asistidos",
     formats: ["Sponsored stream", "Creator reads", "Overlays", "Pre-roll", "Clips"], costType: "CPM", cost: 13, unit: "impresiones",
-    note: "Uso selectivo alrededor de grandes momentos deportivos y gaming.", color: "#865fe3",
+    note: "Uso selectivo alrededor de grandes momentos deportivos y gaming.", color: "#eb6834",
     budgets: { sep: 4000, oct: 4000, nov: 3000, dic: 2000, ene: 1000, feb: 1000 }
   },
   {
@@ -96,14 +96,14 @@ const CHANNELS = [
     action: "Reconocer la marca y visitar después", verticals: ["Marca", "Deportivas"],
     kpi: "Impresiones audio / video", secondary: "Audio completion rate, reach, frecuencia y visitas asistidas",
     formats: ["Audio 30s", "Video takeover", "Sponsored session"], costType: "CPM", cost: 12, unit: "impresiones / audio",
-    note: "Refuerzo sonoro con inversión acotada después del lanzamiento.", color: "#23d263",
+    note: "Refuerzo sonoro con inversión acotada después del lanzamiento.", color: "#eb6834",
     budgets: { sep: 2000, oct: 3000, nov: 3000, dic: 1000, ene: 2000, feb: 1000 }
   }
 ];
 
 const JOURNEY = [
-  { name: "Expectativa", objective: "Awareness", stage: "Expectativa", text: "Del 25 al 30 de septiembre: countdown y misterio para que la marca se sienta como acontecimiento.", media: "TopView · video · teasers" },
-  { name: "Lanzamiento", stage: "Lanzamiento", text: "Desde el 1 de octubre: presentar quién es Raza.do, qué ofrece y por qué tiene respaldo local.", media: "Video · alcance · landings" },
+  { name: "Expectativa", objective: "Awareness", stage: "Expectativa", text: "Desde el 28 de septiembre: countdown y misterio para que la marca se sienta como acontecimiento.", media: "TopView · video · teasers" },
+  { name: "Lanzamiento", stage: "Lanzamiento", text: "Desde el 5 de octubre: presentar quién es Raza.do, qué ofrece y por qué tiene respaldo local.", media: "Video · alcance · landings" },
   { name: "Consideración", objective: "Consideración", text: "Reducir dudas sobre registro, depósito, retiro, bonos y categorías.", media: "Tutoriales · Meta · YouTube" },
   { name: "Conversión", objective: "Performance", text: "Llevar a registro, primer depósito y primera jugada con rutas claras.", media: "Meta · TikTok · Search" },
   { name: "Recurrencia", objective: "Performance", stage: "Mantenimiento", text: "Convertir partido, sorteo, quincena y resultado en hábito.", media: "Retargeting · CRM · audiencias" },
@@ -113,15 +113,17 @@ const JOURNEY = [
 const SCENARIOS = {
   base: { label: "Base", multiplier: 1, description: "benchmark actual" },
   optimistic: { label: "Optimista", multiplier: 1.2, description: "+20% resultados" },
-  pessimistic: { label: "Pesimista", multiplier: 0.8, description: "−20% resultados" }
+  pessimistic: { label: "Pesimista", multiplier: 0.8, description: "−20% resultados" },
+  attribution: { label: "Plataformas", multiplier: 1, description: "CPR atribuido US$4", attribution: true }
 };
 const state = { month: "all", stage: "all", objective: "all", vertical: "all", scenario: "base", search: "" };
 const OBJECTIVE_VISUALS = [
-  { name: "Awareness", color: "#ffd400", purpose: "Instalar y amplificar" },
-  { name: "Consideración", color: "#55c98a", purpose: "Explicar y llevar tráfico" },
-  { name: "Performance", color: "#315cff", purpose: "Generar FTD" }
+  { name: "Awareness", color: "#eb6834", purpose: "Instalar y amplificar" },
+  { name: "Consideración", color: "#1baf7a", purpose: "Explicar y llevar tráfico" },
+  { name: "Performance", color: "#2a78d6", purpose: "Generar FTD" }
 ];
 const FUNNEL_ASSUMPTIONS = { frequency: 3.5, reachToVisit: 0.018, visitToRegistration: 0.20 };
+const ATTRIBUTION_REGISTRATION_COST = 4;
 const money = new Intl.NumberFormat("es-DO", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 const integer = new Intl.NumberFormat("es-DO", { maximumFractionDigits: 0 });
 const decimal = new Intl.NumberFormat("es-DO", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -147,13 +149,25 @@ function filteredChannels(monthIds = visibleMonths().map(m => m.id)) {
 
 function expectedResult(channel, investment) {
   if (!investment || !channel.cost) return 0;
+  if (SCENARIOS[state.scenario].attribution && channel.objective === "Performance" && channel.registrationRate) {
+    return investment / ATTRIBUTION_REGISTRATION_COST * channel.registrationRate;
+  }
   const baseResult = channel.costType === "CPM" ? investment / channel.cost * 1000 : investment / channel.cost;
   return baseResult * SCENARIOS[state.scenario].multiplier;
 }
 
 function expectedRegistrations(channel, investment) {
   if (channel.objective !== "Performance" || !investment || !channel.registrationCost) return 0;
+  if (SCENARIOS[state.scenario].attribution) return investment / ATTRIBUTION_REGISTRATION_COST;
   return investment / channel.registrationCost * SCENARIOS[state.scenario].multiplier;
+}
+
+function benchmarkLabel(channel) {
+  const scenario = SCENARIOS[state.scenario];
+  if (scenario.attribution && channel.objective === "Performance") {
+    return `CPR atribuido · ${formatBenchmarkCost(ATTRIBUTION_REGISTRATION_COST)} · tasa reg.→FTD ${integer.format(channel.registrationRate * 100)}% (${scenario.label})`;
+  }
+  return `${channel.costType} · ${formatBenchmarkCost(channel.cost / scenario.multiplier)} (${scenario.label})`;
 }
 
 function resultLabel(channel, investment) {
@@ -202,7 +216,7 @@ function resetFilters() {
 function renderJourney() {
   $("#journey").innerHTML = JOURNEY.map((item, index) => `
     <button class="journey-card" type="button" data-objective="${item.objective || "all"}" data-stage="${item.stage || "all"}">
-      <span class="journey-number"><span>0${index + 1}</span><span>↗</span></span>
+      <span class="journey-number"><span>0${index + 1}</span><svg class="ico" aria-hidden="true"><use href="#i-abrir"></use></svg></span>
       <span class="journey-content">
         <strong class="journey-title">${item.name}</strong>
         <span class="journey-description">${item.text}</span>
@@ -233,16 +247,17 @@ function renderMetrics() {
   const ftd = channels.filter(c => c.objective === "Performance").reduce((sum, channel) => sum + expectedResult(channel, totalFor(channel, ids)), 0);
   const performance = channels.filter(c => c.objective === "Performance").reduce((sum, channel) => sum + totalFor(channel, ids), 0);
   const share = investment / totalPlan * 100;
+  const isAttribution = SCENARIOS[state.scenario].attribution;
   const cards = [
     { label: "Inversión seleccionada", value: formatCompactMoney(investment), foot: `${decimal.format(share)}% del plan total`, accent: true },
-    { label: "Registros esperados", value: integer.format(registrations), foot: registrations ? `CPR blended ${money.format(performance / registrations)}` : "Solo campañas de conversión" },
-    { label: "FTD esperados", value: integer.format(ftd), foot: "Solo canales optimizables directamente" },
+    { label: isAttribution ? "Registros atribuidos" : "Registros esperados", value: integer.format(registrations), foot: registrations ? `${isAttribution ? "CPR atribuido" : "CPR blended"} ${money.format(performance / registrations)}` : "Solo campañas de conversión" },
+    { label: isAttribution ? "FTD atribuidos" : "FTD esperados", value: integer.format(ftd), foot: isAttribution ? "Misma tasa registro→FTD por canal" : "Solo canales optimizables directamente" },
     { label: "Performance directo", value: formatCompactMoney(performance), foot: investment ? `${decimal.format(performance / investment * 100)}% de la selección` : "0% de la selección" },
     { label: "Canales activos", value: integer.format(channels.length), foot: months.length === 1 ? `${months[0].stage} · ${months[0].range}` : `${months.length} períodos visibles` }
   ];
   $("#metricGrid").innerHTML = cards.map(card => `<article class="metric-card ${card.accent ? "accent" : ""}"><span class="metric-label">${card.label}</span><div class="metric-value">${card.value}</div><p class="metric-foot">${card.foot}</p></article>`).join("");
-  const monthText = months.length === 6 ? "25 sep — 28 feb" : monthListLabel(months) || "Sin meses";
-  $("#selectionLabel").textContent = `${monthText} · ${channels.length} canales · ${state.objective === "all" ? "Todos los objetivos" : state.objective}`;
+  const monthText = months.length === 6 ? "28 sep a 28 feb" : monthListLabel(months) || "Sin meses";
+  $("#selectionLabel").textContent = `${monthText}, ${channels.length} canales · ${state.objective === "all" ? "todos los objetivos" : state.objective}`;
   const scenario = SCENARIOS[state.scenario];
   $("#scenarioLabel").textContent = `Escenario ${scenario.label.toLocaleLowerCase("es")} · ${scenario.description} · inversión sin cambios`;
   document.querySelectorAll(".scenario-option").forEach(button => {
@@ -250,6 +265,7 @@ function renderMetrics() {
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", active);
   });
+  $("#attributionNote").hidden = !scenario.attribution;
 }
 
 function renderChart() {
@@ -259,11 +275,20 @@ function renderChart() {
   const totals = months.map(month => channels.reduce((sum, channel) => sum + channel.budgets[month.id], 0));
   const max = Math.max(...totals, 1);
   $("#chartTitle").textContent = `Distribución por medio · ${months.length === 6 ? "Plan completo" : monthListLabel(months) || "Sin período"}`;
-  $("#chartLegend").innerHTML = channels.map(channel => `<span class="legend-item"><i class="legend-swatch" style="background:${channel.color}"></i>${escapeHtml(channel.name)}</span>`).join("");
+  const legendObjectives = OBJECTIVE_VISUALS.filter(objective =>
+    channels.some(channel => channel.objective === objective.name));
+  $("#chartLegend").innerHTML = legendObjectives.map(objective =>
+    `<span class="legend-item"><i class="legend-swatch" style="background:${objective.color}"></i>${escapeHtml(objective.name)}</span>`).join("");
   $("#monthlyChart").innerHTML = months.map((month, index) => {
-    const segments = channels.filter(channel => channel.budgets[month.id] > 0).map(channel => {
-      const value = channel.budgets[month.id];
-      return `<span class="bar-segment" style="height:${Math.max(value / max * 330, 2)}px;background:${channel.color}" title="${escapeHtml(channel.name)} · ${money.format(value)}"></span>`;
+    // Tres segmentos por mes, uno por objetivo, no once por canal: con once
+    // el lector no distingue las bandas y la barra vuelve a ser un arcoíris.
+    // El detalle por canal vive en el ranking, las fichas y la tabla.
+    const segments = OBJECTIVE_VISUALS.map(objective => {
+      const value = channels
+        .filter(channel => channel.objective === objective.name)
+        .reduce((sum, channel) => sum + channel.budgets[month.id], 0);
+      if (!value) return "";
+      return `<span class="bar-segment" style="height:${Math.max(value / max * 330, 2)}px;background:${objective.color}" title="${escapeHtml(objective.name)} · ${money.format(value)}"></span>`;
     }).join("");
     return `<button class="bar-group" type="button" data-month="${month.id}" aria-label="Filtrar ${month.label}, ${month.range}, etapa ${month.stage}, ${money.format(totals[index])}">
       <span class="bar-total">${formatCompactMoney(totals[index])}</span>
@@ -297,7 +322,7 @@ function renderDistribution() {
     return `${objective.color} ${start}% ${cursor}%`;
   });
   const donut = $("#objectiveDonut");
-  donut.style.background = segments.length ? `conic-gradient(${segments.join(",")})` : "#282828";
+  donut.style.background = segments.length ? `conic-gradient(${segments.join(",")})` : "var(--sunken)";
   donut.innerHTML = `<span><strong>${formatCompactMoney(investment)}</strong><small>selección activa</small></span>`;
   donut.setAttribute("aria-label", investment
     ? objectiveTotals.filter(objective => objective.investment > 0).map(objective => `${objective.name}: ${decimal.format(objective.investment / investment * 100)}%`).join(". ")
@@ -358,6 +383,7 @@ function renderPerformanceResults() {
   const registrations = performanceChannels.reduce((sum, channel) => sum + expectedRegistrations(channel, totalFor(channel, ids)), 0);
   const ftd = performanceChannels.reduce((sum, channel) => sum + expectedResult(channel, totalFor(channel, ids)), 0);
   const conversionRate = registrations ? ftd / registrations * 100 : 0;
+  const isAttribution = SCENARIOS[state.scenario].attribution;
   const cpr = registrations ? investment / registrations : 0;
   const cpa = ftd ? investment / ftd : 0;
   const measuredImpressions = filteredChannels(ids)
@@ -377,9 +403,12 @@ function renderPerformanceResults() {
     <div class="funnel-level funnel-impressions"><span>Impresiones modeladas</span><strong>${formatCompactCount(impressions)}</strong><small>Base de exposición de la selección</small></div>
     <div class="funnel-level funnel-reach"><span>Alcance estimado</span><strong>${formatCompactCount(reach)}</strong><small>Frecuencia blended ${decimal.format(FUNNEL_ASSUMPTIONS.frequency)}</small></div>
     <div class="funnel-level funnel-visits"><span>Visitas calificadas</span><strong>${formatCompactCount(visits)}</strong><small>${decimal.format(reachToVisit)}% alcance→visita</small></div>
-    <div class="funnel-level funnel-registers"><span>Registros esperados</span><strong>${integer.format(registrations)}</strong><small>${decimal.format(visits ? registrations / visits * 100 : 0)}% visita→registro · CPR ${money.format(cpr)}</small></div>
-    <div class="funnel-level funnel-ftd"><span>FTD esperados</span><strong>${integer.format(ftd)}</strong><small>${decimal.format(conversionRate)}% registro→FTD · CPA ${money.format(cpa)}</small></div>`;
-  $("#conversionFunnel").setAttribute("aria-label", `${integer.format(impressions)} impresiones, ${integer.format(reach)} personas alcanzadas, ${integer.format(visits)} visitas, ${integer.format(registrations)} registros y ${integer.format(ftd)} FTD esperados.`);
+    <div class="funnel-level funnel-registers"><span>Registros ${isAttribution ? "atribuidos" : "esperados"}</span><strong>${integer.format(registrations)}</strong><small>${decimal.format(visits ? registrations / visits * 100 : 0)}% visita→registro · CPR ${money.format(cpr)}</small></div>
+    <div class="funnel-level funnel-ftd"><span>FTD ${isAttribution ? "atribuidos" : "esperados"}</span><strong>${integer.format(ftd)}</strong><small>${decimal.format(conversionRate)}% registro→FTD · CPA ${money.format(cpa)}</small></div>`;
+  $("#conversionFunnel").setAttribute("aria-label", `${integer.format(impressions)} impresiones, ${integer.format(reach)} personas alcanzadas, ${integer.format(visits)} visitas, ${integer.format(registrations)} registros y ${integer.format(ftd)} FTD ${isAttribution ? "atribuidos" : "esperados"}.`);
+  $("#funnelAssumption").textContent = isAttribution
+    ? "Ventana de atribución: período después de una vista o clic en que la plataforma puede acreditar la conversión. Los totales pueden solaparse entre plataformas y no representan usuarios únicos. Supuesto: CPR atribuido US$4 y misma tasa registro→FTD por canal."
+    : "Modelo direccional: frecuencia blended 3,5; hasta 1,8% alcance→visita; 20% visita→registro. Meta 30%, TikTok 25% y Google 35% registro→FTD.";
 
   const trend = months.map(month => {
     const monthInvestment = performanceChannels.reduce((sum, channel) => sum + (channel.budgets[month.id] || 0), 0);
@@ -394,12 +423,12 @@ function renderPerformanceResults() {
   if (!trend.length || !performanceChannels.length) {
     const onlyExpectation = months.length > 0 && months.every(month => month.stage === "Expectativa");
     const message = onlyExpectation
-      ? "La expectativa (25–30 sep) no lleva campañas de conversión: la plataforma abre el 1 de octubre."
+      ? "La expectativa comienza el 28 de septiembre y no lleva campañas de conversión: la plataforma abre el 5 de octubre."
       : "No hay resultados de conversión para la selección activa.";
     chart.innerHTML = `<p class="trend-empty">${message}</p>`;
     chart.setAttribute("aria-label", message);
     $("#trendSummary").textContent = onlyExpectation
-      ? "El FTD empieza a contar desde octubre, con la marca ya en vivo."
+      ? "El FTD empieza a contar desde el 5 de octubre, con la marca ya en vivo."
       : "Ajusta los filtros para volver a las campañas de conversión.";
     return;
   }
@@ -454,13 +483,13 @@ function renderChannels() {
         <span class="channel-card-top"><span class="channel-icon" style="background:${channel.color}">${channel.initials}</span><span class="channel-role">${escapeHtml(channel.role)}</span></span>
         <h3>${escapeHtml(channel.name)}</h3><p class="channel-objective">${escapeHtml(channel.action)}</p>
         <span class="channel-numbers"><div><span>Inversión</span><strong>${money.format(investment)}</strong></div><div><span>${escapeHtml(channel.kpi)}</span><strong>${escapeHtml(resultLabel(channel, investment))}</strong></div></span>
-        <span class="channel-expand">Ver estructura y formatos</span>
+        <span class="channel-expand">Ver estructura y formatos<svg class="ico ico-mas" aria-hidden="true"><use href="#i-mas"></use></svg><svg class="ico ico-menos" aria-hidden="true"><use href="#i-menos"></use></svg></span>
       </summary>
       <div class="channel-details">
         <h4>Formatos</h4><div class="format-list">${channel.formats.map(format => `<span class="format-chip">${escapeHtml(format)}</span>`).join("")}</div>
         <h4>Inversión mensual</h4><div class="mini-months">${mini}</div>
         <h4>KPI secundario</h4><p>${escapeHtml(channel.secondary)}</p>
-        <h4>Benchmark del escenario</h4><p>${escapeHtml(channel.costType)} · ${formatBenchmarkCost(channel.cost / SCENARIOS[state.scenario].multiplier)} <small>(${escapeHtml(SCENARIOS[state.scenario].label)})</small></p>
+        <h4>Benchmark del escenario</h4><p>${escapeHtml(benchmarkLabel(channel))}</p>
         <h4>Nota</h4><p>${escapeHtml(channel.note)}</p>
       </div>
     </details>`;

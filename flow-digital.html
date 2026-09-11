@@ -1,11 +1,15 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-suelo="tinta">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Flow digital interactivo de Raza.do: inversión, etapas, canales, formatos y KPI.">
   <title>Raza.do | Flow digital interactivo</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/adcom.css">
   <link rel="stylesheet" href="styles.css">
+  <script defer src="assets/js/adcom.js"></script>
 </head>
 <body class="flow-page">
   <a class="skip-link" href="#flow">Saltar al flow</a>
@@ -30,11 +34,10 @@
   <main id="top">
     <section class="hero section-dark" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span>FLOW DIGITAL</span><span>25 SEP 2026 — 28 FEB 2027</span></p>
         <h1 id="hero-title">Hacer ruido.<br><em>Después, convertir.</em></h1>
-        <p class="hero-lead">Expectativa desde el 25 de septiembre y lanzamiento el 1 de octubre: una marca desconocida entra con fuerza y convierte ese alcance en primeros depósitos de forma progresiva.</p>
+        <p class="hero-lead">Expectativa desde el 28 de septiembre y lanzamiento el 5 de octubre: una marca desconocida entra con fuerza y convierte ese alcance en primeros depósitos de forma progresiva.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#flow">Explorar el flow <span aria-hidden="true">↘</span></a>
+          <a class="button button-primary" href="#flow">Explorar el flow <svg class="ico" aria-hidden="true"><use href="#i-bajar"></use></svg></a>
           <a class="button button-ghost" href="#canales">Ver canales</a>
         </div>
         <dl class="hero-stats" aria-label="Resumen de inversión">
@@ -44,11 +47,11 @@
         </dl>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <div class="hero-image-shell">
+        <figure class="media media-4-5 hero-image-shell">
           <img src="assets/launch-energy.jpg" alt="">
-          <div class="toggle-motif"><span></span></div>
-          <p>LA PASIÓN<br>SE PRENDE</p>
-        </div>
+          <span class="media-motif"><i></i></span>
+          <figcaption>LA PASIÓN SE PRENDE</figcaption>
+        </figure>
         <div class="orbit orbit-one"></div>
         <div class="orbit orbit-two"></div>
       </div>
@@ -56,7 +59,6 @@
 
     <section class="rule-intro section-light" id="intro" aria-labelledby="rule-title">
       <div class="rule-heading">
-        <p class="eyebrow eyebrow-dark"><span>POR QUÉ IMPORTA</span><span>7—11—4</span></p>
         <h2 id="rule-title">La Regla 7-11-4:<br><em>un solo touchpoint nunca es suficiente.</em></h2>
         <p>Antes de confiar lo suficiente en una marca para actuar, una persona necesita en promedio 7 horas de contenido, 11 puntos de contacto y presencia en 4 canales distintos.</p>
       </div>
@@ -78,19 +80,17 @@
 
       <aside class="rule-reference" aria-label="Referencia en video">
         <div>
-          <p class="eyebrow"><span>REFERENCIA</span></p>
           <h3>La decisión se construye<br>antes de la conversión.</h3>
           <p>Por eso la inversión no puede concentrarse en un solo canal ni evaluarse únicamente desde el último clic.</p>
         </div>
-        <a class="button button-primary" href="https://vt.tiktok.com/ZS4NrgmYm/" target="_blank" rel="noopener">Ver video en TikTok <span aria-hidden="true">↗</span></a>
+        <a class="button button-primary" href="https://vt.tiktok.com/ZS4NrgmYm/" target="_blank" rel="noopener">Ver video en TikTok <svg class="ico" aria-hidden="true"><use href="#i-abrir"></use></svg></a>
       </aside>
     </section>
 
     <section class="strategy section-light" id="estrategia" aria-labelledby="strategy-title">
       <div class="section-heading">
-        <p class="eyebrow eyebrow-dark">JOURNEY DE MEDIOS <span>↗</span></p>
-        <h2 id="strategy-title">Cada etapa tiene<br>un trabajo distinto.</h2>
-        <p>Expectativa del 25 al 30 de septiembre, lanzamiento el 1 de octubre y mantenimiento desde noviembre. La pauta no fuerza el mismo KPI en todos los medios: alcance donde toca alcance, consideración donde toca explicar y FTD donde sí podemos optimizar.</p>
+        <h2 id="strategy-title">Cada etapa tiene un trabajo distinto.</h2>
+        <p>Expectativa desde el 28 de septiembre, lanzamiento el 5 de octubre y mantenimiento desde noviembre. La pauta no fuerza el mismo KPI en todos los medios: alcance donde toca alcance, consideración donde toca explicar y FTD donde sí podemos optimizar.</p>
       </div>
       <div class="journey" id="journey" aria-label="Etapas estratégicas"></div>
     </section>
@@ -98,8 +98,7 @@
     <section class="dashboard section-dark" id="flow" aria-labelledby="flow-title">
       <div class="section-heading section-heading-wide">
         <div>
-          <p class="eyebrow">FLOW INTERACTIVO <span>↗</span></p>
-          <h2 id="flow-title">Lee el plan como<br>necesites.</h2>
+          <h2 id="flow-title">Lee el plan como necesites.</h2>
         </div>
         <p>Filtra por período, etapa, objetivo o vertical. Todas las cifras se recalculan sobre la selección activa.</p>
       </div>
@@ -113,9 +112,9 @@
         <label>Etapa
           <select id="stageFilter">
             <option value="all">Todas las etapas</option>
-            <option value="Expectativa">Expectativa (25–30 sep)</option>
-            <option value="Lanzamiento">Lanzamiento (1–31 oct)</option>
-            <option value="Mantenimiento">Mantenimiento (nov–feb)</option>
+            <option value="Expectativa">Expectativa (desde 28 sep)</option>
+            <option value="Lanzamiento">Lanzamiento (desde 5 oct)</option>
+            <option value="Mantenimiento">Mantenimiento (nov a feb)</option>
           </select>
         </label>
         <label>Objetivo
@@ -141,6 +140,7 @@
             <option value="base">Base · benchmark actual</option>
             <option value="optimistic">Optimista · +20% resultados</option>
             <option value="pessimistic">Pesimista · −20% resultados</option>
+            <option value="attribution">Plataformas · CPR US$4</option>
           </select>
         </label>
         <label class="search-label">Buscar canal
@@ -150,21 +150,25 @@
       </form>
 
       <div class="active-filter-row">
-        <p id="selectionLabel" aria-live="polite">Plan completo · 25 sep — 28 feb · 11 canales</p>
+        <p id="selectionLabel" aria-live="polite">Plan completo, 28 sep a 28 feb · 11 canales</p>
         <span class="live-dot" id="scenarioLabel">Escenario base · inversión sin cambios</span>
       </div>
 
-      <section class="scenario-switcher" aria-labelledby="scenario-title">
-        <div class="scenario-switcher-copy">
-          <p class="eyebrow">ESCENARIOS DE RESULTADOS <span>↗</span></p>
-          <h2 id="scenario-title">Misma inversión.<br><em>Tres resultados posibles.</em></h2>
+      <section class="scenario-switcher marco marco-duo" aria-labelledby="scenario-title">
+        <div class="scenario-switcher-copy marco-head">
+          <h2 id="scenario-title">Misma inversión.<br><em>Cuatro lecturas posibles.</em></h2>
           <p>Selecciona un escenario para recalcular el funnel, las tendencias y los resultados por canal. El presupuesto total permanece en US$655,000.</p>
         </div>
-        <div class="scenario-options" role="group" aria-label="Seleccionar escenario de resultados">
-          <button class="scenario-option is-active" type="button" data-scenario="base" aria-pressed="true"><span>01 · BASE</span><strong>Benchmark actual</strong><small>Resultados proyectados sin variación</small></button>
-          <button class="scenario-option scenario-option-positive" type="button" data-scenario="optimistic" aria-pressed="false"><span>02 · OPTIMISTA</span><strong>+20% resultados</strong><small>Misma inversión · menor costo unitario</small></button>
-          <button class="scenario-option scenario-option-negative" type="button" data-scenario="pessimistic" aria-pressed="false"><span>03 · PESIMISTA</span><strong>−20% resultados</strong><small>Misma inversión · mayor costo unitario</small></button>
+        <div class="scenario-options opciones" role="group" aria-label="Seleccionar escenario de resultados">
+          <button class="scenario-option opcion is-active" type="button" data-scenario="base" aria-pressed="true"><span>Base</span><strong>Benchmark actual</strong><small>Resultados proyectados sin variación</small></button>
+          <button class="scenario-option opcion scenario-option-positive" type="button" data-scenario="optimistic" aria-pressed="false"><span>Optimista</span><strong>+20% resultados</strong><small>Misma inversión, menor costo unitario</small></button>
+          <button class="scenario-option opcion scenario-option-negative" type="button" data-scenario="pessimistic" aria-pressed="false"><span>Pesimista</span><strong>−20% resultados</strong><small>Misma inversión, mayor costo unitario</small></button>
+          <button class="scenario-option opcion" type="button" data-scenario="attribution" aria-pressed="false"><span>Plataformas</span><strong>US$4 por registro</strong><small>Misma tasa registro→FTD por canal</small></button>
         </div>
+        <aside class="attribution-note" id="attributionNote" aria-live="polite" hidden>
+          <strong>Cómo leer la atribución de plataformas</strong>
+          <p>Una <b>ventana de atribución</b> es el período después de ver o hacer clic en un anuncio durante el cual la plataforma puede adjudicarse un registro o FTD. Como cada plataforma aplica su propia ventana, un mismo usuario puede aparecer en más de un reporte. Este escenario usa un CPR atribuido promedio de US$4 y conserva la tasa registro→FTD de cada canal; sirve para leer los reportes de medios, no como total de usuarios únicos.</p>
+        </aside>
       </section>
 
       <div class="metric-grid" id="metricGrid" aria-live="polite"></div>
@@ -172,7 +176,6 @@
       <section class="distribution-block" id="distribucion" aria-labelledby="distribution-title">
         <div class="dashboard-subheading">
           <div>
-            <p class="eyebrow">DISTRIBUCIÓN DINÁMICA <span>↗</span></p>
             <h2 id="distribution-title">Dónde está el peso.<br><em>Cómo leerlo.</em></h2>
           </div>
           <p>Los gráficos responden a los filtros activos. Haz clic en un objetivo o un canal para profundizar esa lectura.</p>
@@ -201,7 +204,6 @@
 
         <div class="flow-usage" aria-labelledby="usage-title">
           <div class="flow-usage-heading">
-            <p class="eyebrow"><span>GUÍA DE USO</span></p>
             <h3 id="usage-title">Del dato a<br>la decisión.</h3>
           </div>
           <ol class="flow-usage-steps">
@@ -217,7 +219,6 @@
     <section class="investment section-light" id="inversion" aria-labelledby="investment-title">
       <div class="section-heading section-heading-inline">
         <div>
-          <p class="eyebrow eyebrow-dark">INVERSIÓN MENSUAL <span>↗</span></p>
           <h2 id="investment-title">El lanzamiento pesa.<br>Performance crece.</h2>
         </div>
         <p>Haz clic en un mes para aislarlo. Cada segmento representa un canal y conserva el color en toda la experiencia.</p>
@@ -233,7 +234,6 @@
       <section class="performance-results" id="resultados" aria-labelledby="results-title">
         <div class="results-heading">
           <div>
-            <p class="eyebrow eyebrow-dark">FUNNEL ESPERADO <span>↗</span></p>
             <h2 id="results-title">De la inversión<br>al primer depósito.</h2>
           </div>
           <p>Incorporamos registros como KPI intermedio para entender dónde se pierde eficiencia antes del FTD. Las cifras responden a los filtros activos.</p>
@@ -245,13 +245,14 @@
               <div><span>Funnel de medios y conversión</span><h3>Impresiones → FTD</h3></div>
               <span id="funnelSelection">Plan completo</span>
             </div>
-            <div class="funnel-scenario-options" role="group" aria-label="Escenario aplicado al funnel">
-              <button class="scenario-option funnel-scenario-option is-active" type="button" data-scenario="base" aria-pressed="true"><span>BASE</span><strong>Benchmark</strong></button>
-              <button class="scenario-option funnel-scenario-option" type="button" data-scenario="optimistic" aria-pressed="false"><span>OPTIMISTA</span><strong>+20%</strong></button>
-              <button class="scenario-option funnel-scenario-option" type="button" data-scenario="pessimistic" aria-pressed="false"><span>PESIMISTA</span><strong>−20%</strong></button>
+            <div class="funnel-scenario-options opciones" role="group" aria-label="Escenario aplicado al funnel">
+              <button class="scenario-option opcion funnel-scenario-option is-active" type="button" data-scenario="base" aria-pressed="true"><span>Base</span><strong>Benchmark</strong></button>
+              <button class="scenario-option opcion funnel-scenario-option" type="button" data-scenario="optimistic" aria-pressed="false"><span>Optimista</span><strong>+20%</strong></button>
+              <button class="scenario-option opcion funnel-scenario-option" type="button" data-scenario="pessimistic" aria-pressed="false"><span>Pesimista</span><strong>-20%</strong></button>
+              <button class="scenario-option opcion funnel-scenario-option" type="button" data-scenario="attribution" aria-pressed="false"><span>Plataformas</span><strong>CPR US$4</strong></button>
             </div>
             <div class="conversion-funnel" id="conversionFunnel" role="img" aria-label="Funnel esperado de impresiones, alcance, visitas, registros y FTD"></div>
-            <p class="results-assumption">Modelo direccional: frecuencia blended 3,5; hasta 1,8% alcance→visita; 20% visita→registro. Meta 30%, TikTok 25% y Google 35% registro→FTD.</p>
+            <p class="results-assumption" id="funnelAssumption">Modelo direccional: frecuencia blended 3,5; hasta 1,8% alcance→visita; 20% visita→registro. Meta 30%, TikTok 25% y Google 35% registro→FTD.</p>
           </article>
 
           <article class="performance-panel trend-panel">
@@ -269,7 +270,6 @@
     <section class="channels section-dark" id="canales" aria-labelledby="channels-title">
       <div class="section-heading section-heading-inline">
         <div>
-          <p class="eyebrow">MEDIOS Y FORMATOS <span>↗</span></p>
           <h2 id="channels-title">Un rol claro<br>por canal.</h2>
         </div>
         <p>Las tarjetas responden a los filtros activos. Abre cada una para ver formatos, KPI secundarios y la inversión mensual.</p>
@@ -281,7 +281,6 @@
     <section class="flow-table-section section-light" aria-labelledby="table-title">
       <div class="section-heading section-heading-inline">
         <div>
-          <p class="eyebrow eyebrow-dark">LECTURA COMPACTA <span>↗</span></p>
           <h2 id="table-title">El flow,<br>sin ruido.</h2>
         </div>
         <p>Una fila por canal sobre el período seleccionado. La vista mantiene objetivo, inversión, KPI y resultado base juntos.</p>
@@ -290,7 +289,7 @@
         <table>
           <thead>
             <tr>
-              <th>Canal</th><th>Rol</th><th>Objetivo</th><th>Inversión</th><th>KPI</th><th>Resultado base</th><th>Formatos</th>
+              <th>Canal</th><th>Rol</th><th>Objetivo</th><th>Inversión</th><th>KPI</th><th>Resultado del escenario</th><th>Formatos</th>
             </tr>
           </thead>
           <tbody id="flowTableBody"></tbody>
@@ -299,17 +298,16 @@
     </section>
 
     <section class="decision-strip section-dark">
-      <p class="eyebrow">REGLA DE OPTIMIZACIÓN</p>
       <h2>Primero aprender.<br><em>Luego mover hasta 15%.</em></h2>
       <p>La reasignación mensual debe considerar CPA FTD, tasa registro→depósito, valor depositado y recurrencia. Google permanece contingente a aprobación.</p>
-      <a class="button button-primary" href="#flow">Volver a filtros ↑</a>
+      <a class="button button-primary" href="#flow">Volver a filtros <svg class="ico" aria-hidden="true"><use href="#i-arriba"></use></svg></a>
     </section>
   </main>
 
   <footer>
     <span>RAZA.DO · Flow digital</span>
     <span>RD +18 · Juego responsable</span>
-    <span>Planeación 2026–2027</span>
+    <span>Planeación 2026-2027</span>
   </footer>
 
   <script src="app.js"></script>

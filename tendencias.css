@@ -1,171 +1,363 @@
-.trends-page { background: var(--ink); overflow-x: clip; }
-.trends-page h1, .trends-page h2, .trends-page h3 { text-wrap: balance; }
+/* ============================================================================
+   Raza.do · tendencias de búsqueda
+   ----------------------------------------------------------------------------
+   Capa de documento sobre el sistema Adcom (assets/css/adcom.css).
 
-.trends-hero { min-height: 100svh; padding-top: 132px; display: grid; grid-template-columns: minmax(0,1.08fr) minmax(360px,.62fr); align-items: center; gap: clamp(50px,8vw,130px); overflow: hidden; }
-.trends-hero-copy { min-width: 0; max-width: 900px; position: relative; z-index: 2; }
-.trends-hero h1 { margin: 0; font-size: clamp(4rem,7.8vw,8.2rem); line-height: .88; letter-spacing: -.07em; }
-.trends-hero h1 em { color: var(--yellow); font-family: Georgia,serif; font-weight: 400; }
-.trends-lead { max-width: 760px; margin: 35px 0 0; color: #c8c8c8; font-size: clamp(1rem,1.5vw,1.28rem); }
+   Igual que styles.css: aquí no hay tokens, ni tipografía, ni reset, ni suelo.
+   Solo la geometría de los componentes propios de este análisis.
 
-.search-signal { min-width: 0; min-height: 610px; position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(25px,3vw,44px); border: 1px solid var(--line-dark); border-radius: 36px; background: linear-gradient(150deg,#191919,#090909 68%); overflow: hidden; box-shadow: var(--shadow); }
-.signal-orbit { position: absolute; border: 1px solid rgba(255,212,0,.3); border-radius: 50%; pointer-events: none; }
-.signal-orbit-one { width: 410px; height: 410px; top: -210px; right: -145px; }
-.signal-orbit-two { width: 260px; height: 260px; top: -115px; right: -75px; border-style: dashed; }
-.signal-topline { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 16px; color: var(--yellow); font-size: .69rem; font-weight: 800; letter-spacing: .13em; }
-.signal-content { position: relative; z-index: 1; margin-top: auto; }
-.signal-kicker { display: block; margin-bottom: 6px; color: var(--muted-dark); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.signal-content strong { display: block; color: var(--yellow); font-size: clamp(4.6rem,7vw,7.7rem); line-height: .9; letter-spacing: -.07em; }
-.signal-content h2 { margin: 16px 0 10px; font-size: clamp(1.7rem,3vw,2.8rem); line-height: 1; }
-.signal-content p { max-width: 420px; margin: 0; color: #aaa; }
-.signal-bars { height: 78px; display: flex; align-items: end; gap: 7px; margin-top: 32px; }
-.signal-bars i { height: var(--bar); flex: 1; border-radius: 5px 5px 0 0; background: linear-gradient(var(--yellow),#806b00); opacity: .88; }
+   El documento va en suelo tinta, declarado en el <html>.
 
-.market-summary, .market-dashboard, .specifics, .action-section, .methodology { scroll-margin-top: 72px; }
-.universe-grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-.universe-card { min-height: 530px; position: relative; display: flex; flex-direction: column; padding: clamp(25px,3vw,38px); border: 1px solid var(--line-light); border-radius: 28px; background: var(--white); overflow: hidden; }
-.universe-card::before { content: ""; position: absolute; width: 220px; height: 220px; top: -128px; right: -92px; border: 1px dashed rgba(5,5,5,.24); border-radius: 50%; }
-.universe-index { position: absolute; top: 24px; right: 28px; color: #d1d1ce; font-size: 2.5rem; font-weight: 900; letter-spacing: -.07em; }
-.universe-label { width: fit-content; padding: 7px 11px; border: 1px solid var(--ink); border-radius: 999px; font-size: .67rem; font-weight: 900; letter-spacing: .1em; }
-.universe-card h3 { margin: auto 0 18px; font-size: clamp(2.7rem,4vw,4.7rem); line-height: .88; letter-spacing: -.06em; }
-.universe-card p { min-height: 72px; margin: 0; color: var(--muted-light); }
-.universe-card dl { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: 28px 0 14px; border: 1px solid var(--line-light); border-radius: 15px; background: var(--line-light); overflow: hidden; }
-.universe-card dl div { padding: 15px; background: #f7f7f3; }
-.universe-card dt { color: #737373; font-size: .64rem; text-transform: uppercase; }
-.universe-card dd { margin: 4px 0 0; font-size: 1.45rem; font-weight: 900; }
-.universe-card small { color: #737373; }
-.universe-casino { background: var(--yellow); }
-.universe-casino dl div { background: #ffe34a; }
-.universe-sports { background: #e7e7e2; }
+   Lo que se fue, y por qué:
+     · Georgia serif dentro de un titular sans  mezclar familias para enfatizar
+     · los orbes y anillos punteados            decoración, no información
+     · las píldoras de 999px                    el sistema es de radio 0
+     · tres tarjetas con tres fondos distintos  el fondo no significaba nada
+     · los colores fijos en hex                 no seguían al suelo ni imprimían
+   ========================================================================= */
 
-.demand-radar { max-width: var(--max); margin: 0 auto; border: 1px solid var(--line-dark); border-radius: 26px; overflow: hidden; }
-.demand-row { min-height: 74px; display: grid; grid-template-columns: minmax(190px,.75fr) minmax(260px,1.4fr) minmax(150px,.55fr); align-items: center; gap: 28px; padding: 15px 26px; border-bottom: 1px solid var(--line-dark); }
-.demand-row:last-child { border-bottom: 0; }
-.demand-row strong { font-size: 1rem; }
-.demand-row > span:last-child { color: var(--muted-dark); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
-.demand-row-head { min-height: 48px; color: #7d7d7d; font-size: .64rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.demand-track { height: 12px; border-radius: 999px; background: #242424; overflow: hidden; }
-.demand-track i { display: block; width: var(--width); height: 100%; border-radius: inherit; background: var(--yellow); }
+/* --------------------------------------------------------------- portada --- */
+/* El fondo lo pone el sistema desde el suelo. Aquí solo el recorte lateral. */
+.trends-page{overflow-x:clip}
+.trends-hero{
+  display:grid; gap:var(--s-col); align-items:end;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.7fr);
+  min-height:0; padding-top:var(--s-6)
+}
+.trends-hero-copy{min-width:0; max-width:none}
+.trends-hero h1{margin:0; font-size:clamp(2.3rem,6vw,5.4rem); max-width:17ch}
+/* El énfasis es el subrayado de acento del sistema, no otra familia. */
+.trends-hero h1 em,.action-heading h2 em{
+  font-family:inherit; font-weight:inherit; font-style:normal; color:var(--ink);
+  box-decoration-break:clone; -webkit-box-decoration-break:clone;
+  padding-inline:.06em; background:linear-gradient(transparent 58%, var(--accent) 58%)
+}
+.trends-lead{
+  max-width:var(--measure); margin:var(--s-5) 0 0;
+  color:var(--ink-secondary); font-size:clamp(1.05rem,1.55vw,1.22rem)
+}
+.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:var(--s-5)}
 
-.signal-table-wrap { max-width: var(--max); margin: 22px auto 0; overflow-x: auto; border: 1px solid var(--line-dark); border-radius: 26px; }
-.signal-table { width: 100%; min-width: 920px; border-collapse: collapse; }
-.signal-table th { padding: 18px 22px; color: #777; border-bottom: 1px solid var(--line-dark); font-size: .66rem; letter-spacing: .11em; text-align: left; text-transform: uppercase; }
-.signal-table td { padding: 20px 22px; border-bottom: 1px solid var(--line-dark); }
-.signal-table tbody tr:last-child td { border-bottom: 0; }
-.signal-table td:first-child strong, .signal-table td:first-child span { display: block; }
-.signal-table td:first-child span { margin-top: 3px; color: #777; font-size: .7rem; text-transform: uppercase; }
-.signal-table td:last-child { color: #b7b7b7; }
-.trend-pill { display: inline-flex; min-width: 82px; justify-content: center; padding: 6px 10px; border-radius: 999px; font-size: .78rem; font-weight: 900; }
-.trend-up { color: var(--ink); background: var(--yellow); }
-.trend-down { color: #f5f5f5; background: #392020; }
+/* ------------------------------------------------------------ la señal ---
+   La cifra de portada: un dato grande con su contexto, separado por reglas.
+   Antes era una cápsula con degradado, sombra y dos orbes girando. */
+.search-signal{
+  display:grid; align-content:start; gap:18px; min-width:0; min-height:0;
+  padding:var(--s-5) 0 0; background:none; border:0;
+  border-top:2px solid var(--rule-strong); box-shadow:none
+}
+.signal-orbit,.signal-orbit-one,.signal-orbit-two{display:none}
+.signal-topline{
+  display:flex; justify-content:space-between; gap:14px;
+  color:var(--ink-muted); font-size:.78rem; font-weight:600; letter-spacing:0
+}
+.signal-content{margin:0}
+.signal-kicker{
+  display:block; margin-bottom:4px; color:var(--ink-muted);
+  font-size:.8rem; font-weight:500; letter-spacing:0; text-transform:none
+}
+.signal-content strong{
+  display:block; color:var(--ink); font-size:clamp(2.6rem,6vw,4.4rem);
+  font-weight:800; line-height:.95; letter-spacing:-.045em;
+  font-variant-numeric:tabular-nums
+}
+.signal-content h2{margin:14px 0 8px; font-size:clamp(1.3rem,2.4vw,1.9rem); max-width:22ch}
+.signal-content p{max-width:44ch; margin:0; color:var(--ink-secondary); font-size:.93rem}
+/* La serie de la señal: una barra por mes, sin degradado ni redondeo. El
+   último mes es el dato vivo y va en el amarillo del suelo. */
+.signal-bars{display:flex; align-items:end; gap:4px; height:64px; margin-top:22px}
+.signal-bars i{height:var(--bar); flex:1; background:var(--fg-secondary)}
+.signal-bars i:last-child{background:var(--accent-fg)}
 
-.specific-explorer { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: minmax(250px,.36fr) minmax(0,1fr); border: 1px solid var(--line-light); border-radius: 28px; background: var(--white); overflow: hidden; box-shadow: 0 20px 70px rgba(0,0,0,.08); }
-.term-switcher { padding: 12px; border-right: 1px solid var(--line-light); background: #e9e9e4; }
-.term-button { width: 100%; min-height: 68px; display: flex; align-items: center; gap: 14px; padding: 13px 16px; border: 0; border-bottom: 1px solid rgba(5,5,5,.09); background: transparent; color: #555; text-align: left; cursor: pointer; transition: color .18s ease, background .18s ease, transform .18s ease; }
-.term-button span { color: #999; font-size: .66rem; font-weight: 900; letter-spacing: .1em; }
-.term-button:hover, .term-button:focus-visible { color: var(--ink); transform: translateX(3px); }
-.term-button.is-active { border-radius: 13px; background: var(--yellow); color: var(--ink); font-weight: 800; }
-.term-button.is-active span { color: #6f5d00; }
-.term-button-generic { margin-top: 10px; border: 1px solid rgba(5,5,5,.15); border-radius: 13px; }
-.specific-chart-panel { min-width: 0; padding: clamp(23px,4vw,52px); }
-.chart-readout { display: flex; justify-content: space-between; gap: 30px; }
-.chart-readout > div > span { color: #777; font-size: .66rem; font-weight: 800; letter-spacing: .12em; }
-.chart-readout h3 { margin: 5px 0 0; font-size: clamp(2.1rem,4vw,4.2rem); line-height: .95; letter-spacing: -.055em; }
-.chart-readout dl { display: grid; grid-template-columns: repeat(3,minmax(105px,1fr)); margin: 0; }
-.chart-readout dl div { min-width: 125px; padding: 12px 17px; border-left: 1px solid var(--line-light); }
-.chart-readout dt { color: #777; font-size: .62rem; text-transform: uppercase; }
-.chart-readout dd { margin: 4px 0 0; font-size: 1.3rem; font-weight: 900; }
-.trend-chart-shell { margin-top: 30px; border: 1px solid var(--line-light); border-radius: 18px; background: #f7f7f3; overflow-x: auto; }
-.specific-trend-chart { width: 100%; min-width: 680px; display: block; }
-.specific-trend-chart .chart-grid { stroke: #d6d6d0; stroke-width: 1; }
-.specific-trend-chart .chart-axis { fill: #777; font-size: 11px; }
-.specific-trend-chart .chart-area { fill: rgba(255,212,0,.27); }
-.specific-trend-chart .chart-line { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-.specific-trend-chart .chart-dot { fill: var(--yellow); stroke: var(--ink); stroke-width: 3; }
-.chart-description { max-width: 800px; min-height: 46px; margin: 20px 0 0; color: var(--muted-light); }
+/* --------------------------------------------------------- los universos ---
+   Tres verticales. Antes cada tarjeta tenía un fondo distinto sin que el
+   fondo significara nada; ahora las tres son iguales y la que lidera se
+   marca con una regla de acento. */
+.market-summary,.market-dashboard,.specifics,.action-section,.methodology{scroll-margin-top:88px}
+.universe-grid{
+  display:grid; gap:var(--s-4);
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))
+}
+.universe-card{
+  display:grid; align-content:start; gap:12px; position:relative; min-height:0;
+  padding:var(--s-5); background:var(--raised);
+  border:1px solid var(--rule); overflow:visible
+}
+.universe-card::before{content:none}
+.universe-index{display:none}
+/* Era una píldora con borde. Es una etiqueta. */
+.universe-label{
+  width:auto; padding:0; border:0; color:var(--ink-muted);
+  font-size:.78rem; font-weight:700; letter-spacing:0
+}
+.universe-card h3{margin:0; font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.universe-card p{min-height:0; margin:0; color:var(--ink-secondary); font-size:.92rem}
+.universe-card dl{
+  display:flex; flex-wrap:wrap; gap:14px 24px; margin:6px 0 0; padding-top:14px;
+  background:none; border:0; border-top:1px solid var(--rule); overflow:visible
+}
+.universe-card dl div{display:grid; gap:2px; padding:0; background:none; min-width:0}
+.universe-card dt{color:var(--ink-muted); font-size:.76rem; font-weight:600;
+  letter-spacing:0; text-transform:none; order:2}
+.universe-card dd{
+  margin:0; font-size:1.1rem; font-weight:700; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; order:1
+}
+.universe-card small{color:var(--ink-muted); font-size:.82rem}
+/* Casino es la vertical que lidera la demanda. Se marca en la etiqueta, que
+   es texto y pasa contraste, no con una franja de color pegada al borde. */
+.universe-casino .universe-label{color:var(--accent-deep)}
+.universe-casino .universe-label::after{content:" · lidera la demanda"; font-weight:600}
+.universe-casino{background:var(--raised)}
+.universe-casino dl div{background:none}
+.universe-lottery,.universe-sports{background:var(--raised)}
 
-.specific-card-grid { max-width: var(--max); margin: 18px auto 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-.specific-card { min-height: 340px; display: flex; flex-direction: column; padding: 26px; border: 1px solid var(--line-light); border-radius: 24px; background: #e9e9e4; }
-.specific-card > span { color: #777; font-size: .65rem; font-weight: 900; letter-spacing: .11em; }
-.specific-card > strong { margin-top: auto; font-size: clamp(3.2rem,5vw,5rem); line-height: .9; letter-spacing: -.065em; }
-.specific-card h3 { margin: 11px 0 8px; font-size: 1.4rem; }
-.specific-card p { margin: 0; color: var(--muted-light); font-size: .88rem; }
-.specific-card i { width: fit-content; margin-top: 18px; padding: 6px 9px; border: 1px solid var(--ink); border-radius: 999px; font-size: .68rem; font-style: normal; font-weight: 800; }
-.specific-card-lead { background: var(--yellow); }
+/* --------------------------------------------------------- radar de demanda ---
+   Filas de barra, con la gramática de barras del sistema. */
+.demand-radar{background:none; border:0; overflow:visible}
+.demand-row{
+  display:grid; align-items:center; gap:14px 26px; min-height:0;
+  grid-template-columns:minmax(170px,.75fr) minmax(220px,1.4fr) minmax(130px,.5fr);
+  padding:15px 0; border-bottom:1px solid var(--rule)
+}
+.demand-row:first-of-type{border-top:1px solid var(--rule-strong)}
+.demand-row:last-child{border-bottom:1px solid var(--rule)}
+.demand-row strong{font-size:.95rem; font-weight:600}
+.demand-row > span:last-child{
+  color:var(--ink-muted); font-size:.8rem; letter-spacing:0; text-transform:none
+}
+.demand-row-head{
+  min-height:0; color:var(--ink-muted); font-size:.76rem; font-weight:700;
+  letter-spacing:0; text-transform:none; border-bottom:1px solid var(--rule-strong)
+}
+.demand-track{height:12px; background:var(--sunken); overflow:hidden}
+.demand-track i{display:block; width:var(--width); height:100%; background:var(--fg)}
+.demand-row:first-of-type .demand-track i{background:var(--accent-fg)}
 
-.action-section { display: grid; grid-template-columns: minmax(260px,.56fr) minmax(0,1.44fr); gap: clamp(45px,8vw,130px); }
-.action-heading { position: sticky; top: 120px; align-self: start; }
-.action-heading h2 { margin: 0; font-size: clamp(3.3rem,6.5vw,6.8rem); line-height: .89; letter-spacing: -.065em; }
-.action-heading h2 em { color: var(--yellow); font-family: Georgia,serif; font-weight: 400; }
-.action-list { margin: 0; padding: 0; list-style: none; }
-.action-list li { min-height: 160px; display: grid; grid-template-columns: 58px 1fr auto; align-items: center; gap: 25px; padding: 25px 0; border-bottom: 1px solid var(--line-dark); }
-.action-list li > span { color: var(--yellow); font-size: 1.3rem; font-weight: 900; }
-.action-list strong { font-size: 1.2rem; }
-.action-list p { max-width: 680px; margin: 8px 0 0; color: var(--muted-dark); }
-.action-list em { padding: 7px 10px; border: 1px solid var(--line-dark); border-radius: 999px; color: #aaa; font-size: .62rem; font-style: normal; font-weight: 800; letter-spacing: .09em; }
-.noise-alert { grid-column: 2; display: grid; grid-template-columns: auto 1fr; gap: 22px; margin-top: 32px; padding: 25px; border: 1px solid rgba(255,212,0,.45); border-radius: 22px; background: #171500; }
-.noise-icon { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 50%; background: var(--yellow); color: var(--ink); font-size: 1.2rem; font-weight: 900; }
-.noise-alert strong { font-size: 1.05rem; }
-.noise-alert p { margin: 7px 0 0; color: #aaa; }
-.negative-tags { grid-column: 2; display: flex; flex-wrap: wrap; gap: 7px; }
-.negative-tags span { padding: 6px 9px; border: 1px solid var(--line-dark); border-radius: 999px; color: #bbb; font-size: .68rem; }
+/* ---------------------------------------------------------- tabla de señal --- */
+.signal-table-wrap{margin-top:20px; overflow-x:auto; background:none; border:0}
+.signal-table{width:100%; min-width:920px; border-collapse:collapse; font-size:.9rem}
+.signal-table th{
+  padding:0 20px 12px 0; background:none; color:var(--ink-muted); text-align:left;
+  font-size:.76rem; font-weight:700; letter-spacing:0; text-transform:none;
+  border-bottom:1px solid var(--rule-strong)
+}
+.signal-table td{
+  padding:15px 20px 15px 0; border:0; vertical-align:top;
+  font-variant-numeric:tabular-nums
+}
+.signal-table tbody tr + tr td{border-top:1px solid var(--rule)}
+.signal-table td:first-child strong,.signal-table td:first-child span{display:block}
+.signal-table td:first-child strong{font-weight:600}
+.signal-table td:first-child span{
+  margin-top:3px; color:var(--ink-muted); font-size:.78rem; text-transform:none
+}
+.signal-table td:last-child{color:var(--ink-secondary)}
+/* Era una píldora amarilla contra una marrón. Ahora es el signo del dato. */
+.trend-pill{
+  display:inline-flex; min-width:0; justify-content:flex-start; padding:0;
+  background:none; font-size:.9rem; font-weight:700;
+  font-variant-numeric:tabular-nums
+}
+.trend-up{color:var(--ink)}
+.trend-down{color:var(--neg)}
 
-.methodology { display: grid; grid-template-columns: minmax(240px,.55fr) minmax(0,1.45fr); gap: clamp(40px,8vw,120px); }
-.methodology h2 { margin: 0; font-size: clamp(3rem,6vw,6rem); line-height: .9; letter-spacing: -.06em; }
-.method-grid { display: grid; grid-template-columns: repeat(2,1fr); border: 1px solid var(--line-light); border-radius: 24px; overflow: hidden; }
-.method-grid article { min-height: 210px; padding: 26px; border-right: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
-.method-grid article:nth-child(even) { border-right: 0; }
-.method-grid article:nth-last-child(-n+2) { border-bottom: 0; }
-.method-grid span { color: #aaa; font-weight: 900; }
-.method-grid h3 { margin: 45px 0 8px; }
-.method-grid p { margin: 0; color: var(--muted-light); }
-.method-footer { grid-column: 2; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 18px; border-top: 1px solid var(--line-light); color: #777; font-size: .7rem; font-weight: 800; letter-spacing: .06em; }
-.method-footer a { color: var(--ink); }
+/* ------------------------------------------------------------- explorador ---
+   Lista de términos a la izquierda, gráfico a la derecha. Es un control, así
+   que la superficie sí existe; pero sin sombra ni radio. */
+.specific-explorer{
+  display:grid; grid-template-columns:minmax(240px,.34fr) minmax(0,1fr);
+  background:var(--raised); border:1px solid var(--rule); box-shadow:none; overflow:hidden
+}
+.term-switcher{padding:0; background:none; border-right:1px solid var(--rule)}
+.term-button{
+  display:flex; align-items:center; gap:12px; width:100%; min-height:58px;
+  padding:12px 16px; text-align:left; cursor:pointer;
+  background:none; border:0; border-bottom:1px solid var(--rule);
+  color:var(--ink-secondary); font-size:.9rem;
+  transition:background .18s var(--ease), color .18s var(--ease)
+}
+.term-button span{
+  color:var(--ink-muted); font-size:.76rem; font-weight:700; letter-spacing:0;
+  font-variant-numeric:tabular-nums
+}
+.term-button:hover,.term-button:focus-visible{background:var(--sunken); color:var(--ink); transform:none}
+.term-button.is-active{
+  background:var(--sunken); color:var(--ink); font-weight:700;
+  box-shadow:inset 3px 0 0 var(--ink)
+}
+.term-button.is-active span{color:var(--fg)}
+.term-button-generic{margin-top:0; border:0; border-top:1px solid var(--rule-strong)}
 
-@media (max-width: 1120px) {
-  .trends-hero { grid-template-columns: 1fr .6fr; }
-  .search-signal { min-height: 550px; }
-  .chart-readout { display: grid; }
-  .chart-readout dl { border-top: 1px solid var(--line-light); }
-  .chart-readout dl div:first-child { border-left: 0; }
+.specific-chart-panel{min-width:0; padding:var(--s-5)}
+.chart-readout{display:grid; gap:18px}
+.chart-readout > div{letter-spacing:0}
+/* El kicker sobre el título se va, como todo eyebrow. */
+.chart-readout > div > span{display:none}
+.chart-readout h3{margin:0; font-size:clamp(1.5rem,3vw,2.4rem); max-width:20ch}
+.chart-readout dl{
+  display:flex; flex-wrap:wrap; gap:14px 28px; margin:0; padding-top:14px;
+  border-top:1px solid var(--rule)
+}
+.chart-readout dl div{
+  display:grid; gap:2px; min-width:0; padding:0; border:0
+}
+.chart-readout dt{color:var(--ink-muted); font-size:.76rem; font-weight:600;
+  letter-spacing:0; text-transform:none; order:2}
+.chart-readout dd{
+  margin:0; font-size:1.1rem; font-weight:700; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; order:1
+}
+@media (min-width:900px){
+  .chart-readout{grid-template-columns:minmax(0,1fr) auto; align-items:end}
+  .chart-readout dl{border-top:0; padding-top:0}
 }
 
-@media (max-width: 900px) {
-  .trends-hero, .action-section, .methodology { grid-template-columns: 1fr; }
-  .trends-hero { min-height: auto; }
-  .search-signal { min-height: 480px; }
-  .universe-grid { grid-template-columns: 1fr; }
-  .universe-card { min-height: 430px; }
-  .demand-row { grid-template-columns: minmax(170px,.8fr) 1.2fr; }
-  .demand-row > span:last-child, .demand-row-head span:last-child { display: none; }
-  .specific-explorer { grid-template-columns: 1fr; }
-  .term-switcher { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line-light); }
-  .term-button { min-width: 195px; border-right: 1px solid rgba(5,5,5,.09); border-bottom: 0; }
-  .term-button-generic { margin: 0 0 0 8px; }
-  .specific-card-grid { grid-template-columns: repeat(2,1fr); }
-  .action-heading { position: static; }
-  .noise-alert, .method-footer { grid-column: 1; }
+.trend-chart-shell{margin-top:26px; background:none; border:0; overflow-x:auto}
+.specific-trend-chart{display:block; width:100%; min-width:640px}
+.specific-trend-chart .chart-grid{stroke:var(--rule); stroke-width:1}
+.specific-trend-chart .chart-axis{fill:var(--fg-muted); font-size:12px}
+/* El área bajo la línea: el amarillo del suelo, muy diluido. */
+.specific-trend-chart .chart-area{fill:color-mix(in srgb, var(--accent-fg) 18%, transparent)}
+.specific-trend-chart .chart-line{
+  fill:none; stroke:var(--fg); stroke-width:2; stroke-linecap:round; stroke-linejoin:round
+}
+.specific-trend-chart .chart-dot{fill:var(--accent-fg); stroke:var(--ground); stroke-width:2}
+.chart-description{
+  max-width:var(--measure); min-height:0; margin:18px 0 0;
+  color:var(--ink-muted); font-size:.88rem; line-height:1.55
 }
 
-@media (max-width: 620px) {
-  .trends-hero { width: 100%; max-width: 100vw; }
-  .trends-hero-copy, .search-signal, .trends-hero .hero-actions, .trends-hero .hero-stats { width: 100%; max-width: calc(100vw - 36px); }
-  .trends-hero h1 { font-size: clamp(3.2rem,15vw,5.2rem); }
-  .trends-hero .eyebrow { flex-wrap: wrap; gap: 10px; }
-  .trends-hero .hero-actions { display: grid; grid-template-columns: 1fr; }
-  .trends-hero .hero-actions .button { width: 100%; justify-content: center; }
-  .search-signal { min-height: 430px; }
-  .signal-content strong { font-size: 4.5rem; }
-  .demand-row { grid-template-columns: 1fr; gap: 10px; padding-block: 18px; }
-  .demand-row-head { display: none; }
-  .chart-readout dl { grid-template-columns: 1fr; }
-  .chart-readout dl div { border-left: 0; border-bottom: 1px solid var(--line-light); }
-  .specific-card-grid { grid-template-columns: 1fr; }
-  .specific-card { min-height: 300px; }
-  .action-list li { grid-template-columns: 40px 1fr; }
-  .action-list em { grid-column: 2; width: fit-content; }
-  .noise-alert { grid-template-columns: 1fr; }
-  .negative-tags { grid-column: 1; }
-  .method-grid { grid-template-columns: 1fr; }
-  .method-grid article, .method-grid article:nth-child(even), .method-grid article:nth-last-child(-n+2) { border-right: 0; border-bottom: 1px solid var(--line-light); }
-  .method-grid article:last-child { border-bottom: 0; }
+/* ------------------------------------------------------ tarjetas de término --- */
+.specific-card-grid{
+  display:grid; gap:var(--s-4); margin-top:18px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))
+}
+.specific-card{
+  display:grid; align-content:start; gap:8px; min-height:0; padding:20px 0 0;
+  background:none; border:0; border-top:2px solid var(--rule-strong)
+}
+.specific-card > span{
+  color:var(--ink-muted); font-size:.78rem; font-weight:700; letter-spacing:0;
+  order:1
+}
+.specific-card > strong{
+  margin:0; font-size:clamp(1.8rem,3.4vw,2.6rem); font-weight:800; line-height:1;
+  letter-spacing:-.045em; font-variant-numeric:tabular-nums; order:2
+}
+.specific-card h3{margin:0; font-size:1.15rem; order:3}
+.specific-card p{margin:0; color:var(--ink-secondary); font-size:.88rem; order:4}
+/* Era una píldora con borde. Es un pie de dato. */
+.specific-card i{
+  width:auto; margin:6px 0 0; padding:0; border:0; color:var(--ink-muted);
+  font-size:.8rem; font-style:normal; font-weight:600; order:5
+}
+.specific-card-lead{background:none; border-top-color:var(--accent)}
+
+/* --------------------------------------------------------- qué se hace con esto --- */
+.action-section{display:grid; gap:var(--s-col)}
+@media (min-width:1000px){
+  .action-section{grid-template-columns:minmax(240px,.5fr) minmax(0,1.5fr)}
+  .action-heading{position:sticky; top:104px; align-self:start}
+}
+.action-heading h2{margin:0; font-size:clamp(1.9rem,4.2vw,3.4rem); max-width:16ch}
+.action-list{margin:0; padding:0; list-style:none}
+.action-list li{
+  display:grid; align-items:baseline; gap:10px 22px; min-height:0;
+  grid-template-columns:32px minmax(0,1fr) auto;
+  padding-block:var(--s-4); border-top:1px solid var(--rule)
+}
+.action-list li:last-of-type{border-bottom:1px solid var(--rule)}
+.action-list li > span{
+  color:var(--ink-muted); font-size:.82rem; font-weight:700;
+  font-variant-numeric:tabular-nums
+}
+.action-list strong{font-size:1.05rem; font-weight:800; letter-spacing:-.02em; line-height:1.3}
+.action-list p{max-width:54ch; margin:7px 0 0; color:var(--ink-secondary); font-size:.92rem}
+.action-list em{
+  padding:0; border:0; color:var(--ink-muted); font-size:.78rem;
+  font-style:normal; font-weight:600; letter-spacing:0; white-space:nowrap
+}
+
+/* La advertencia: una regla de acento y el texto. No una isla oscura. */
+.noise-alert{
+  display:grid; gap:6px; margin-top:28px; padding:20px 0 0;
+  background:none; border:0; border-top:2px solid var(--accent)
+}
+.noise-icon{display:none}
+.noise-alert strong{font-size:1rem; letter-spacing:-.02em}
+.noise-alert p{max-width:var(--measure); margin:0; color:var(--ink-secondary); font-size:.92rem}
+
+/* Las negativas: una lista, no una nube de píldoras. */
+.negative-tags{
+  display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:20px; padding-top:14px;
+  border-top:1px solid var(--rule)
+}
+.negative-tags span{
+  padding:0; border:0; color:var(--ink-secondary); font-size:.86rem;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace
+}
+@media (min-width:1000px){ .noise-alert,.negative-tags{grid-column:2} }
+
+/* ----------------------------------------------------------- metodología --- */
+.methodology{display:grid; gap:var(--s-col)}
+@media (min-width:1000px){
+  .methodology{grid-template-columns:minmax(230px,.48fr) minmax(0,1.52fr)}
+}
+.methodology h2{margin:0; font-size:clamp(1.9rem,4.2vw,3.4rem); max-width:14ch}
+/* Cuatro notas de método: reglas, no una rejilla de celdas con borde. */
+.method-grid{
+  display:grid; gap:var(--s-5); border:0; overflow:visible;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))
+}
+.method-grid article{
+  display:grid; gap:6px; align-content:start; min-height:0; padding:16px 0 0;
+  border:0; border-top:1px solid var(--rule-strong)
+}
+.method-grid span{
+  color:var(--ink-muted); font-weight:700; font-size:.78rem;
+  font-variant-numeric:tabular-nums
+}
+.method-grid h3{margin:0; font-size:1.05rem}
+.method-grid p{margin:0; color:var(--ink-secondary); font-size:.9rem; line-height:1.55}
+.method-footer{
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 20px;
+  margin-top:26px; padding-top:14px; border-top:1px solid var(--rule);
+  color:var(--ink-muted); font-size:.8rem; font-weight:600; letter-spacing:0
+}
+.method-footer a{color:var(--ink-secondary)}
+@media (min-width:1000px){ .method-footer{grid-column:2} }
+
+/* ------------------------------------------------------------ responsive --- */
+@media (max-width:1000px){
+  .trends-hero{grid-template-columns:1fr}
+  .specific-explorer{grid-template-columns:1fr}
+  .term-switcher{display:flex; overflow-x:auto; border-right:0;
+    border-bottom:1px solid var(--rule)}
+  .term-button{min-width:180px; border-bottom:0; border-right:1px solid var(--rule)}
+  .term-button.is-active{box-shadow:inset 0 -3px 0 var(--ink)}
+  .term-button-generic{border-top:0; border-left:1px solid var(--rule-strong)}
+}
+@media (max-width:820px){
+  .demand-row{grid-template-columns:minmax(150px,.8fr) 1.2fr}
+  .demand-row > span:last-child,.demand-row-head span:last-child{display:none}
+}
+@media (max-width:560px){
+  .demand-row{grid-template-columns:1fr; gap:10px; padding-block:16px}
+  .demand-row-head{display:none}
+  .results-trend,.trend-chart-shell{overflow-x:auto}
+  .action-list li{grid-template-columns:28px 1fr}
+  .action-list em{grid-column:2; white-space:normal}
+  .hero-actions{display:grid; grid-template-columns:1fr}
+  .hero-actions .button{width:100%}
+}
+
+/* ---------------------------------------------------------------- papel --- */
+@media print{
+  .hero-actions,.term-switcher{display:none !important}
+  .specific-explorer{grid-template-columns:1fr !important; border:0 !important}
+  .specific-chart-panel{padding:0 !important}
+  .trends-hero,.action-section,.methodology{grid-template-columns:1fr !important}
+  .action-heading{position:static !important}
+  /* el color lo resuelven los tokens que el sistema redeclara para papel */
 }
