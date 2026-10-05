@@ -1,6 +1,5 @@
 const MONTHS = [
-  { id: "sep", label: "Septiembre", short: "SEP", range: "desde 28 sep", stage: "Expectativa", focus: "Teaser y countdown desde el 28 de septiembre: ruido sin producto, antes de abrir la marca." },
-  { id: "oct", label: "Octubre", short: "OCT", range: "desde 5 oct", stage: "Lanzamiento", focus: "Salida en vivo el 5 de octubre: máximo alcance y primeras rutas de conversión." },
+  { id: "oct", label: "Octubre", short: "OCT", range: "desde 12 oct", stage: "Lanzamiento", focus: "Salida en vivo el 12 de octubre, Día de la Raza: máximo alcance y primeras rutas de conversión." },
   { id: "nov", label: "Noviembre", short: "NOV", range: "1 a 30 nov", stage: "Mantenimiento", focus: "Transición de consideración hacia performance." },
   { id: "dic", label: "Diciembre", short: "DIC", range: "1 a 31 dic", stage: "Mantenimiento", focus: "Conversión alrededor de eventos y momentos de alta intención." },
   { id: "ene", label: "Enero", short: "ENE", range: "1 a 31 ene", stage: "Mantenimiento", focus: "Escalar adquisición y retargeting con los aprendizajes acumulados." },
@@ -14,7 +13,7 @@ const CHANNELS = [
     kpi: "Alcance 18+ y frecuencia", secondary: "Reach único, frecuencia, VTR y búsquedas de marca",
     formats: ["Reels", "Stories", "Video 6 a 15s", "Reach & Frequency"], costType: "CPM", cost: 6.5, unit: "impresiones",
     note: "Controlar saturación y renovar creatividades cada dos semanas.", color: "#eb6834",
-    budgets: { sep: 22000, oct: 32000, nov: 12000, dic: 7000, ene: 4000, feb: 4000 }
+    budgets: { oct: 54000, nov: 12000, dic: 7000, ene: 4000, feb: 4000 }
   },
   {
     id: "meta-conversion", name: "Meta Conversiones", initials: "MC", role: "Core", objective: "Performance",
@@ -22,8 +21,8 @@ const CHANNELS = [
     kpi: "Registros + FTD", secondary: "CPR, tasa registro→FTD, valor depositado y ROAS",
     formats: ["Reels", "Stories", "Feed", "Retargeting", "Deep links"], costType: "CPA FTD", cost: 45, unit: "FTD",
     registrationCost: 13.5, registrationRate: 0.30,
-    note: "Principal canal de FTD. Arranca el 5 de octubre, cuando ya se puede registrar y depositar.", color: "#2a78d6",
-    budgets: { sep: 0, oct: 33000, nov: 28000, dic: 32000, ene: 35000, feb: 37000 }
+    note: "Principal canal de FTD. Arranca el 12 de octubre, cuando ya se puede registrar y depositar.", color: "#2a78d6",
+    budgets: { oct: 33000, nov: 28000, dic: 32000, ene: 35000, feb: 37000 }
   },
   {
     id: "tiktok-always", name: "TikTok Always-on", initials: "TT", role: "Core / Growth", objective: "Performance",
@@ -32,15 +31,15 @@ const CHANNELS = [
     formats: ["In-feed", "Spark Ads", "Creator whitelisting", "Retargeting"], costType: "CPA FTD", cost: 60, unit: "FTD",
     registrationCost: 15, registrationRate: 0.25,
     note: "Segundo canal de FTD: lenguaje local, tutorial y prueba social. Enciende con el lanzamiento.", color: "#2a78d6",
-    budgets: { sep: 0, oct: 25000, nov: 17000, dic: 18000, ene: 19000, feb: 21000 }
+    budgets: { oct: 25000, nov: 17000, dic: 18000, ene: 19000, feb: 21000 }
   },
   {
     id: "tiktok-topview", name: "TikTok TopView + Prime Time", initials: "TV", role: "Growth", objective: "Awareness",
     action: "Generar notoriedad y búsqueda de marca", verticals: ["Marca"],
     kpi: "Alcance y vistas", secondary: "Frecuencia, VTR, búsquedas de marca y visitas asistidas",
     formats: ["TopView", "Prime Time", "Teaser", "Reveal", "Manifiesto"], costType: "CPV", cost: 0.01, unit: "vistas",
-    note: "Teaser el 28 de septiembre y reveal el 5 de octubre. Sin expectativa directa de FTD.", color: "#eb6834",
-    budgets: { sep: 40000, oct: 65000, nov: 0, dic: 0, ene: 0, feb: 0 }
+    note: "Teaser previo al lanzamiento y reveal el 12 de octubre, Día de la Raza. Sin expectativa directa de FTD.", color: "#eb6834",
+    budgets: { oct: 105000, nov: 0, dic: 0, ene: 0, feb: 0 }
   },
   {
     id: "google", name: "Google Search", initials: "GS", role: "Core contingente", objective: "Performance",
@@ -49,7 +48,7 @@ const CHANNELS = [
     formats: ["Search marca", "Genéricos", "Verticales", "Extensiones"], costType: "CPA FTD", cost: 43, unit: "FTD",
     registrationCost: 15.05, registrationRate: 0.35,
     note: "Pendiente de aprobación. Si no habilita, redistribuir 60% Meta, 25% TikTok y 15% DCO.", color: "#2a78d6",
-    budgets: { sep: 0, oct: 3000, nov: 4000, dic: 5000, ene: 6000, feb: 8000 }
+    budgets: { oct: 3000, nov: 4000, dic: 5000, ene: 6000, feb: 8000 }
   },
   {
     id: "youtube", name: "YouTube", initials: "YT", role: "Support", objective: "Consideración",
@@ -57,23 +56,23 @@ const CHANNELS = [
     kpi: "Vistas calificadas", secondary: "VTR, alcance único, lift de búsqueda y conversiones asistidas",
     formats: ["Bumper 6s", "In-stream 15 a 30s", "Shorts", "Video Action"], costType: "CPV", cost: 0.017, unit: "vistas",
     note: "Alta presión en lanzamiento; después, secuencias educativas y retargeting.", color: "#1baf7a",
-    budgets: { sep: 12000, oct: 32000, nov: 7000, dic: 3000, ene: 2000, feb: 4000 }
+    budgets: { oct: 44000, nov: 7000, dic: 3000, ene: 2000, feb: 4000 }
   },
   {
-    id: "dco-display", name: "DCO RealTime Display", initials: "DD", role: "Support", objective: "Consideración",
+    id: "dco-display", name: "Programática Display", initials: "PD", role: "Support", objective: "Consideración",
     action: "Visitar una landing relevante según el contexto", verticals: ["Deportivas", "Lotería", "Casino"],
     kpi: "Impresiones visibles", secondary: "Viewability, CTR, visitas calificadas y conversión asistida",
-    formats: ["Display dinámico", "Video contextual", "Retargeting", "Piezas por evento"], costType: "CPM", cost: 13, unit: "impresiones",
-    note: "Base always-on desde el lanzamiento, con mensajes dinámicos por calendario y resultados.", color: "#1baf7a",
-    budgets: { sep: 0, oct: 13000, nov: 10000, dic: 10000, ene: 11000, feb: 9000 }
+    formats: ["Display"], costType: "CPM", cost: 13, unit: "impresiones",
+    note: "Formato estándar de salida. Se puede evolucionar a DCO si se decide activar personalización dinámica.", color: "#1baf7a",
+    budgets: { oct: 13000, nov: 10000, dic: 10000, ene: 11000, feb: 9000 }
   },
   {
-    id: "dco-push", name: "DCO RealTime Push", initials: "DP", role: "Support", objective: "Consideración",
+    id: "dco-push", name: "Programática Push", initials: "PP", role: "Support", objective: "Consideración",
     action: "Entrar a la landing por momento deportivo o resultado", verticals: ["Deportivas", "Lotería"],
     kpi: "Visitas calificadas", secondary: "CTR, rebote, registro asistido y conversión asistida",
-    formats: ["Web push", "Native push", "Partido", "Sorteo", "Quincena"], costType: "CPC", cost: 0.8, unit: "visitas",
-    note: "Arranca con la landing viva el 5 de octubre y funciona como puente hacia performance.", color: "#1baf7a",
-    budgets: { sep: 0, oct: 5000, nov: 3000, dic: 4000, ene: 4000, feb: 4000 }
+    formats: ["Push (solo con claim)"], costType: "CPC", cost: 0.8, unit: "visitas",
+    note: "Formato estándar de salida, activo desde el 12 de octubre. Se puede evolucionar a DCO si se decide activar personalización dinámica.", color: "#1baf7a",
+    budgets: { oct: 5000, nov: 3000, dic: 4000, ene: 4000, feb: 4000 }
   },
   {
     id: "rich-media", name: "Rich Media", initials: "RM", role: "Support", objective: "Consideración",
@@ -81,7 +80,7 @@ const CHANNELS = [
     kpi: "Interacciones", secondary: "Engagement rate, tiempo interactivo y visitas asistidas",
     formats: ["Expandibles", "Countdown", "Interactivos", "Alto impacto"], costType: "CPE", cost: 0.65, unit: "interacciones",
     note: "Countdown en expectativa y alto impacto en lanzamiento; después solo las piezas eficientes.", color: "#1baf7a",
-    budgets: { sep: 5000, oct: 5000, nov: 3000, dic: 3000, ene: 1000, feb: 1000 }
+    budgets: { oct: 10000, nov: 3000, dic: 3000, ene: 1000, feb: 1000 }
   },
   {
     id: "twitch", name: "Twitch", initials: "TW", role: "Support / Community", objective: "Awareness",
@@ -89,7 +88,7 @@ const CHANNELS = [
     kpi: "Impresiones / video", secondary: "Minutos vistos, chat engagement y clics asistidos",
     formats: ["Sponsored stream", "Creator reads", "Overlays", "Pre-roll", "Clips"], costType: "CPM", cost: 13, unit: "impresiones",
     note: "Uso selectivo alrededor de grandes momentos deportivos y gaming.", color: "#eb6834",
-    budgets: { sep: 4000, oct: 4000, nov: 3000, dic: 2000, ene: 1000, feb: 1000 }
+    budgets: { oct: 8000, nov: 3000, dic: 2000, ene: 1000, feb: 1000 }
   },
   {
     id: "spotify", name: "Spotify", initials: "SP", role: "Support", objective: "Awareness",
@@ -97,13 +96,13 @@ const CHANNELS = [
     kpi: "Impresiones audio / video", secondary: "Audio completion rate, reach, frecuencia y visitas asistidas",
     formats: ["Audio 30s", "Video takeover", "Sponsored session"], costType: "CPM", cost: 12, unit: "impresiones / audio",
     note: "Refuerzo sonoro con inversión acotada después del lanzamiento.", color: "#eb6834",
-    budgets: { sep: 2000, oct: 3000, nov: 3000, dic: 1000, ene: 2000, feb: 1000 }
+    budgets: { oct: 5000, nov: 3000, dic: 1000, ene: 2000, feb: 1000 }
   }
 ];
 
 const JOURNEY = [
-  { name: "Expectativa", objective: "Awareness", stage: "Expectativa", text: "Desde el 28 de septiembre: countdown y misterio para que la marca se sienta como acontecimiento.", media: "TopView · video · teasers" },
-  { name: "Lanzamiento", stage: "Lanzamiento", text: "Desde el 5 de octubre: presentar quién es Raza.do, qué ofrece y por qué tiene respaldo local.", media: "Video · alcance · landings" },
+  { name: "Expectativa", objective: "Awareness", text: "Antes del lanzamiento: countdown y misterio para que la marca se sienta como acontecimiento.", media: "TopView · video · teasers" },
+  { name: "Lanzamiento", stage: "Lanzamiento", text: "Desde el 12 de octubre, Día de la Raza: presentar quién es Raza.do, qué ofrece y por qué tiene respaldo local.", media: "Video · alcance · landings" },
   { name: "Consideración", objective: "Consideración", text: "Reducir dudas sobre registro, depósito, retiro, bonos y categorías.", media: "Tutoriales · Meta · YouTube" },
   { name: "Conversión", objective: "Performance", text: "Llevar a registro, primer depósito y primera jugada con rutas claras.", media: "Meta · TikTok · Search" },
   { name: "Recurrencia", objective: "Performance", stage: "Mantenimiento", text: "Convertir partido, sorteo, quincena y resultado en hábito.", media: "Retargeting · CRM · audiencias" },
@@ -256,7 +255,7 @@ function renderMetrics() {
     { label: "Canales activos", value: integer.format(channels.length), foot: months.length === 1 ? `${months[0].stage} · ${months[0].range}` : `${months.length} períodos visibles` }
   ];
   $("#metricGrid").innerHTML = cards.map(card => `<article class="metric-card ${card.accent ? "accent" : ""}"><span class="metric-label">${card.label}</span><div class="metric-value">${card.value}</div><p class="metric-foot">${card.foot}</p></article>`).join("");
-  const monthText = months.length === 6 ? "28 sep a 28 feb" : monthListLabel(months) || "Sin meses";
+  const monthText = months.length === MONTHS.length ? "Oct 2026 a Feb 2027" : monthListLabel(months) || "Sin meses";
   $("#selectionLabel").textContent = `${monthText}, ${channels.length} canales · ${state.objective === "all" ? "todos los objetivos" : state.objective}`;
   const scenario = SCENARIOS[state.scenario];
   $("#scenarioLabel").textContent = `Escenario ${scenario.label.toLocaleLowerCase("es")} · ${scenario.description} · inversión sin cambios`;
@@ -274,7 +273,7 @@ function renderChart() {
   const channels = filteredChannels(monthIds);
   const totals = months.map(month => channels.reduce((sum, channel) => sum + channel.budgets[month.id], 0));
   const max = Math.max(...totals, 1);
-  $("#chartTitle").textContent = `Distribución por medio · ${months.length === 6 ? "Plan completo" : monthListLabel(months) || "Sin período"}`;
+  $("#chartTitle").textContent = `Distribución por medio · ${months.length === MONTHS.length ? "Plan completo" : monthListLabel(months) || "Sin período"}`;
   const legendObjectives = OBJECTIVE_VISUALS.filter(objective =>
     channels.some(channel => channel.objective === objective.name));
   $("#chartLegend").innerHTML = legendObjectives.map(objective =>
@@ -397,7 +396,7 @@ function renderPerformanceResults() {
   const impressions = Math.max(measuredImpressions, reach * FUNNEL_ASSUMPTIONS.frequency);
   const reachToVisit = reach ? visits / reach * 100 : 0;
 
-  const funnelPeriod = months.length === 6 ? "Plan completo" : monthListLabel(months) || "Sin período";
+  const funnelPeriod = months.length === MONTHS.length ? "Plan completo" : monthListLabel(months) || "Sin período";
   $("#funnelSelection").textContent = `${funnelPeriod} · ${SCENARIOS[state.scenario].label}`;
   $("#conversionFunnel").innerHTML = `
     <div class="funnel-level funnel-impressions"><span>Impresiones modeladas</span><strong>${formatCompactCount(impressions)}</strong><small>Base de exposición de la selección</small></div>
@@ -421,15 +420,10 @@ function renderPerformanceResults() {
   });
   const chart = $("#resultsTrend");
   if (!trend.length || !performanceChannels.length) {
-    const onlyExpectation = months.length > 0 && months.every(month => month.stage === "Expectativa");
-    const message = onlyExpectation
-      ? "La expectativa comienza el 28 de septiembre y no lleva campañas de conversión: la plataforma abre el 5 de octubre."
-      : "No hay resultados de conversión para la selección activa.";
+    const message = "No hay resultados de conversión para la selección activa.";
     chart.innerHTML = `<p class="trend-empty">${message}</p>`;
     chart.setAttribute("aria-label", message);
-    $("#trendSummary").textContent = onlyExpectation
-      ? "El FTD empieza a contar desde el 5 de octubre, con la marca ya en vivo."
-      : "Ajusta los filtros para volver a las campañas de conversión.";
+    $("#trendSummary").textContent = "Ajusta los filtros para volver a las campañas de conversión.";
     return;
   }
 
