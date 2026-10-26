@@ -1,0 +1,53 @@
+/* ============================================================================
+   Raza.do · implementación Meta
+   Capa de documento sobre el sistema Adcom (assets/css/adcom.css).
+   Solo geometría: sin tokens, tipografía, reset ni colores en hex.
+   ========================================================================= */
+.imp-guide{max-width:var(--measure); margin:var(--s-4) 0 0; color:var(--ink-secondary)}
+.acct{padding-block:var(--s-6)}
+.imp-kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:1px; margin:var(--s-4) 0 0; background:var(--rule); border:1px solid var(--rule)}
+.imp-kpis div{background:var(--raised); padding:var(--s-3) var(--s-4)}
+.imp-kpis dt{color:var(--ink-muted); font-size:.8rem}
+.imp-kpis dd{margin:4px 0 0; font-size:1.35rem; white-space:nowrap; font-weight:700; color:var(--accent-fg); font-variant-numeric:tabular-nums}
+.imp-state{margin:var(--s-3) 0 0; color:var(--ink-secondary)}
+.imp-table-wrap{margin-top:var(--s-4); overflow-x:auto}
+.imp-table{width:100%; min-width:900px; border-collapse:collapse; font-size:.9rem}
+.imp-table th,.imp-table td{text-align:left}
+.imp-table td.tnum{white-space:nowrap}
+.imp-table th{ padding:10px 12px; color:var(--ink-muted); font-weight:500; border-bottom:1px solid var(--rule-strong)}
+.imp-table td{padding:12px; vertical-align:top}
+.imp-table tbody tr + tr td{border-top:1px solid var(--rule)}
+.imp-table td strong,.imp-table td span:not(.pill){display:block}
+.imp-table td span:not(.pill){color:var(--ink-muted); font-size:.8rem}
+
+.pill{display:inline-block; padding:2px 8px; font-size:.75rem; font-weight:600; border:1px solid currentColor; white-space:nowrap}
+.pill-on{color:var(--pos)}
+.pill-off{color:var(--ink-muted)}
+.pill-bad{color:var(--neg)}
+.pill-wait{color:var(--accent-fg)}
+
+.camp{margin-top:var(--s-6)}
+.camp-head{display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding-bottom:var(--s-3); border-bottom:1px solid var(--rule-strong)}
+.camp-head h2{margin:0}
+.adset{margin-top:var(--s-5)}
+.adset-head{display:flex; flex-wrap:wrap; align-items:center; gap:4px 12px}
+.adset-head h3{margin:0}
+.adset-head p{flex-basis:100%; margin:0; color:var(--ink-secondary); font-size:.9rem}
+.ad-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:var(--s-4); margin-top:var(--s-4)}
+.ad-card{display:flex; flex-direction:column; background:var(--raised); border:1px solid var(--rule)}
+.ad-off,.ad-bad{opacity:.78}
+.ad-media{aspect-ratio:4/5; background:var(--sunken); display:grid; place-items:center; overflow:hidden}
+.ad-media img{width:100%; height:100%; object-fit:cover; display:block}
+.ad-nopreview{color:var(--ink-muted); font-size:.85rem}
+.ad-body{padding:var(--s-3) var(--s-4) var(--s-4); display:flex; flex-direction:column; gap:8px}
+.ad-head{display:flex; justify-content:space-between; align-items:center; gap:8px}
+.ad-format{color:var(--ink-muted); font-size:.75rem}
+.ad-body h4{margin:0; font-size:1rem}
+.ad-copy{margin:0; color:var(--ink-secondary); font-size:.85rem}
+.ad-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:0}
+.ad-stats dt{color:var(--ink-muted); font-size:.7rem}
+.ad-stats dd{margin:2px 0 0; font-size:.85rem; font-weight:600; font-variant-numeric:tabular-nums}
+.ad-nodata{margin:0; color:var(--ink-muted); font-size:.85rem}
+.ad-issue{margin:0; color:var(--neg); font-size:.8rem}
+.ad-meta{margin:0; color:var(--ink-muted); font-size:.75rem; overflow-wrap:anywhere}
+@media (max-width:640px){.ad-grid{grid-template-columns:1fr}}
