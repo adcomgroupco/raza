@@ -1,0 +1,57 @@
+/* ============================================================================
+   Raza.do · flow digital ajustado (capítulo 2)
+   Capa de documento sobre el sistema Adcom (assets/css/adcom.css).
+   Solo geometría: sin tokens, tipografía, reset ni colores en hex.
+
+   El sistema centra cada hijo directo de una franja con `margin-inline:auto`
+   y un ancho máximo. Aquí no se usa `margin` abreviado en esos hijos: pisaría
+   el centrado y el bloque quedaría pegado a la izquierda.
+   ========================================================================= */
+.imp-kpis,.active-filter-row{margin-inline:auto}
+.metric-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr))}
+
+.aj-panel{min-width:0; margin-top:var(--s-4); padding:var(--s-4) var(--s-5) var(--s-5); background:var(--raised); border:1px solid var(--rule); border-radius:var(--radius)}
+.aj-panel-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:var(--s-3); padding-bottom:var(--s-3); border-bottom:1px solid var(--rule)}
+.aj-panel-head h3{margin:0; font-size:1.2rem}
+.aj-panel-head span{color:var(--ink-muted); font-size:.8rem}
+.aj-split{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:var(--s-4); align-items:stretch}
+.aj-split > .aj-panel{margin-top:0}
+.aj-split-block{margin-top:var(--s-4)}
+@media (max-width:1000px){
+  .aj-split{grid-template-columns:minmax(0,1fr)}
+}
+
+.aj-table-wrap{overflow-x:auto}
+.aj-table{width:100%; min-width:540px; border-collapse:collapse; font-size:.9rem}
+.aj-table-wide{min-width:720px}
+.aj-table th{padding:12px 10px; text-align:left; color:var(--ink-muted); font-size:.8rem; font-weight:500; border-bottom:1px solid var(--rule-strong)}
+.aj-table td{padding:12px 10px; text-align:left; vertical-align:middle}
+.aj-table tbody tr + tr td{border-top:1px solid var(--rule)}
+.aj-table th.tnum,.aj-table td.tnum{text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums}
+.aj-table tr.aj-total td{border-top:1px solid var(--rule-strong)}
+.aj-meter{display:inline-block; width:56px; height:6px; margin-right:8px; vertical-align:middle; background:var(--sunken)}
+.aj-meter i{display:block; height:100%}
+.aj-muted{color:var(--ink-muted)}
+.aj-warn{color:var(--neg); font-weight:700}
+.aj-note{max-width:var(--measure); margin:var(--s-3) 0 0; color:var(--ink-secondary); font-size:.82rem}
+
+.aj-insights{display:grid; margin:0; padding:0; list-style:none}
+.aj-insights li{padding:var(--s-3) 0; border-top:1px solid var(--rule); color:var(--ink-secondary); font-size:.9rem}
+.aj-insights li:first-child{padding-top:var(--s-3); border-top:0}
+.aj-insights strong{display:block; margin-bottom:2px; color:var(--ink); font-size:.95rem}
+
+.aj-rules{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:var(--s-4); margin-top:var(--s-5); padding:0; list-style:none}
+.aj-rule{display:grid; gap:var(--s-3); align-content:start; padding:var(--s-4); background:var(--raised); border:1px solid var(--rule); border-radius:var(--radius)}
+.aj-rule:last-child:nth-child(3n+1){grid-column:1 / -1}
+.aj-rule-n{color:var(--accent-fg); font-weight:700; font-variant-numeric:tabular-nums}
+.aj-rule h3{margin:0; font-size:1.1rem}
+.aj-rule p{margin:0; color:var(--ink-secondary); font-size:.9rem}
+
+.cal-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,185px),1fr)); gap:var(--s-4); margin-top:var(--s-5)}
+.cal-card{display:grid; gap:var(--s-3); align-content:start; padding:var(--s-4); background:var(--raised); border:1px solid var(--rule); border-radius:var(--radius)}
+.cal-card header{display:grid; gap:2px}
+.cal-card header span{color:var(--ink-muted); font-size:.8rem}
+.cal-amount{margin:0; font-size:1.6rem; font-weight:700; color:var(--accent-fg); font-variant-numeric:tabular-nums}
+.cal-amount small{display:block; margin-top:2px; color:var(--ink-muted); font-size:.75rem; font-weight:500}
+.cal-card h4{margin:0; color:var(--ink-muted); font-size:.75rem; font-weight:500}
+.cal-card p:not(.cal-amount){margin:0; color:var(--ink-secondary); font-size:.88rem}

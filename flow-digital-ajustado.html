@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es" data-suelo="tinta">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Capítulo 2 del flow digital de Raza.do: inversión reordenada con el gasto real, reglas de escalado y reserva sin asignar.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Raza.do | Flow digital ajustado</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/adcom.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="implementacion-medios.css">
+  <link rel="stylesheet" href="ajustado.css">
+  <script defer src="assets/js/adcom.js"></script>
+</head>
+<body class="flow-page">
+  <a class="skip-link" href="#flow">Saltar al flow</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Volver al centro de documentos de Raza.do">
+      <span class="brand-mark">R</span>
+      <span>RAZA.DO</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="index.html">Documentos</a>
+      <a href="flow-digital.html">Capítulo 1</a>
+      <a href="#real">Lo real</a>
+      <a href="#reglas">Reglas</a>
+      <a href="#flow">Flow</a>
+      <a href="#calendario">Calendario</a>
+    </nav>
+    <span class="header-context">RD · 18+</span>
+  </header>
+
+  <main id="top">
+    <section class="hero section-dark" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Lo real manda.<br><em>El flow se ajusta.</em></h1>
+        <p class="hero-lead">Capítulo 2 del flow digital, con corte al 9 de noviembre de 2026. Reordenamos la inversión con lo ya gastado y reglas de escalado prudentes, y mantenemos una reserva sin asignar.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#real">Ver lo real <svg class="ico" aria-hidden="true"><use href="#i-bajar"></use></svg></a>
+          <a class="button button-ghost" href="#flow">Explorar el flow ajustado</a>
+        </div>
+        <dl class="hero-stats" aria-label="Resumen de inversión">
+          <div><dt>Gastado a la fecha</dt><dd>US$32,7K</dd></div>
+          <div><dt>Asignado ajustado</dt><dd>US$355K</dd></div>
+          <div><dt>Reserva sin asignar</dt><dd>US$300K</dd></div>
+        </dl>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <figure class="media media-4-5 hero-image-shell">
+          <img src="assets/launch-energy.jpg" alt="">
+          <span class="media-motif"><i></i></span>
+          <figcaption>LA PASIÓN SE PRENDE</figcaption>
+        </figure>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+      </div>
+    </section>
+
+    <section class="strategy section-light" id="real" aria-labelledby="real-title">
+      <div class="section-heading">
+        <h2 id="real-title">Lo que pasó desde el lanzamiento.</h2>
+        <p>Meta y TikTok salen de sus cuentas; la programática, de la hoja del proveedor, que arranca el 16 de octubre. Lo gastado en pesos colombianos se convierte con una TRM base de COP 3.500 por US$1.</p>
+      </div>
+
+      <dl class="imp-kpis" id="realKpis" aria-label="Gasto real a la fecha"></dl>
+
+      <article class="aj-panel">
+        <div class="aj-panel-head"><h3>Real frente al plan original</h3><span>US$ · octubre completo y noviembre al 9/11</span></div>
+        <div class="aj-table-wrap">
+          <table class="aj-table aj-table-wide">
+            <thead>
+              <tr><th>Canal</th><th class="tnum">Plan oct</th><th class="tnum">Real oct</th><th class="tnum">Ejecución</th><th class="tnum">Plan nov</th><th class="tnum">Real 1 a 9 nov</th><th class="tnum">Nov ajustado</th></tr>
+            </thead>
+            <tbody id="realPlanBody"></tbody>
+          </table>
+        </div>
+        <p class="aj-note">La programática arranca el 16 de octubre y Meta y TikTok con presupuestos bajos; TopView, YouTube y Google no tienen gasto. Noviembre ajustado incluye lo real hasta el 9 y la proyección del resto del mes.</p>
+      </article>
+
+      <div class="aj-split aj-split-block">
+        <article class="aj-panel">
+          <div class="aj-panel-head"><h3>Ritmo semanal</h3><span>Gasto en US$ y CPR por registro</span></div>
+          <div class="aj-table-wrap">
+            <table class="aj-table">
+              <thead>
+                <tr><th>Semana</th><th class="tnum">Meta</th><th class="tnum">CPR Meta</th><th class="tnum">TikTok</th><th class="tnum">CPR TikTok</th><th class="tnum">Programática</th></tr>
+              </thead>
+              <tbody id="weeklyBody"></tbody>
+            </table>
+          </div>
+          <p class="aj-note">En rojo, el CPR que sube más de 30% frente a la semana anterior: es el freno de la regla 01. TikTok figura sin gasto el 9/11 (falta verificar si es pausa o dato parcial). Los CPR son los de las plataformas, sin validar contra el backend.</p>
+        </article>
+
+        <article class="aj-panel">
+          <div class="aj-panel-head"><h3>Qué dicen los datos</h3><span>Lectura al 9/11</span></div>
+          <ul class="aj-insights">
+            <li><strong>La programática es el 90% del gasto real.</strong>Noviembre va a un ritmo de unos US$36K frente a los US$22K del plan, empujado por Display y Rich Media.</li>
+            <li><strong>TopView, YouTube y Google no tienen gasto.</strong>Todavía no se puede leer su eficiencia.</li>
+            <li><strong>El CPR se encarece con el gasto.</strong>En Meta pasó de US$0,15 a US$0,58 entre la primera y la cuarta semana, mientras el gasto semanal subía de US$25 a US$1.215. No se separa de factores de calendario: el conjunto de anuncios es de MLB.</li>
+            <li><strong>Los CPR reales no se usan para planear.</strong>En Registros_AlwaysOn el píxel cuenta más compras (5.252) que registros (3.416): el evento de depósito no es un FTD limpio. Hace falta el dato del backend.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="strategy section-light" id="reglas" aria-labelledby="rules-title">
+      <div class="section-heading">
+        <h2 id="rules-title">Subir con sentido, sin saltos.</h2>
+        <p>Siete reglas para mover el presupuesto con lo que ya está vigente y cuidar el CPA, sobre todo en Meta.</p>
+      </div>
+      <ol class="aj-rules">
+        <li class="aj-rule"><span class="aj-rule-n">01</span><h3>Meta sube en escalera</h3><p>Como máximo 25% semana a semana, y solo si el CPR de 7 días no empeora más de 30%. El salto de gasto de la semana del 2 al 8 de noviembre (+35%) ya superaba el tope, y el CPR de esa semana subió 150%: con la regla, la semana siguiente no habría subido.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">02</span><h3>TikTok primero corrige</h3><p>El CPR de Registro se triplicó y el de Depósito se cuadruplicó entre las dos últimas semanas completas. Primero creativos y CPR; después, la misma escalera.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">03</span><h3>Programática baja gradual</h3><p>De unos US$1,2K diarios (1 a 9 de noviembre) a unos US$0,9K en el resto del mes y US$0,6K en diciembre. Display, el formato más eficiente, concentra el presupuesto; Streaming y Spotify, de los más caros, se acotan.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">04</span><h3>Diciembre no sobreinvierte</h3><p>Menor calendario deportivo: Meta y TikTok se mantienen planos y el foco pasa a Lotería, Casino y Virtuales. El flow maestro todavía lista béisbol invernal en diciembre; se confirma antes de fijar.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">05</span><h3>TopView por eventos</h3><p>Bolsa de US$105K sin fechas definidas: se presupuesta por mes (noviembre US$15K, diciembre US$10K, enero US$35K, febrero US$45K) y se ajusta cuando se fijen los momentos especiales.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">06</span><h3>YouTube y Google con rampa</h3><p>Pendientes de certificación. Se proyectan desde noviembre (YouTube US$60K y Google US$26K en total) con una rampa de tres semanas y se liberan solo con la aprobación. Si no habilitan, su presupuesto vuelve a la reserva.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">07</span><h3>La reserva se mantiene</h3><p>US$299.503 (45,7% del plan) sin asignar. Se libera por tramos solo si el CPR y la calidad de registro, validados con el backend, lo respaldan.</p></li>
+      </ol>
+    </section>
+
+    <section class="dashboard section-dark" id="flow" aria-labelledby="flow-title">
+      <div class="section-heading section-heading-wide">
+        <div>
+          <h2 id="flow-title">Lee el flow ajustado como necesites.</h2>
+        </div>
+        <p>Filtra por período, etapa, objetivo o vertical. Todas las cifras se recalculan sobre la selección activa; octubre es real y noviembre combina lo real con la proyección.</p>
+      </div>
+
+      <form class="filters" id="filters" aria-label="Filtros del flow">
+        <label>Mes
+          <select id="monthFilter">
+            <option value="all">Todos los meses</option>
+          </select>
+        </label>
+        <label>Etapa
+          <select id="stageFilter">
+            <option value="all">Todas las etapas</option>
+            <option value="Lanzamiento">Lanzamiento (desde 12 oct)</option>
+            <option value="Mantenimiento">Mantenimiento (nov a feb)</option>
+          </select>
+        </label>
+        <label>Objetivo
+          <select id="objectiveFilter">
+            <option value="all">Todos los objetivos</option>
+            <option value="Awareness">Awareness</option>
+            <option value="Consideración">Consideración</option>
+            <option value="Performance">Performance / FTD</option>
+          </select>
+        </label>
+        <label>Vertical
+          <select id="verticalFilter">
+            <option value="all">Todas las verticales</option>
+            <option value="Marca">Marca</option>
+            <option value="Deportivas">Deportivas</option>
+            <option value="Casino">Casino</option>
+            <option value="Lotería">Lotería</option>
+            <option value="Virtuales">Virtuales</option>
+          </select>
+        </label>
+        <label>Escenario de resultados
+          <select id="scenarioFilter">
+            <option value="base">Base · benchmark actual</option>
+            <option value="optimistic">Optimista · +20% resultados</option>
+            <option value="pessimistic">Pesimista · −20% resultados</option>
+            <option value="attribution">Plataformas · CPR US$4</option>
+          </select>
+        </label>
+        <label class="search-label">Buscar canal
+          <input id="searchFilter" type="search" placeholder="Meta, TikTok, Search…" autocomplete="off">
+        </label>
+        <button class="reset-button" id="resetFilters" type="button">Restablecer</button>
+      </form>
+
+      <div class="active-filter-row">
+        <p id="selectionLabel" aria-live="polite">Oct 2026 a Feb 2027, 11 canales</p>
+        <span class="live-dot" id="scenarioLabel">Escenario base · inversión sin cambios</span>
+      </div>
+
+      <section class="scenario-switcher marco marco-duo" aria-labelledby="scenario-title">
+        <div class="scenario-switcher-copy marco-head">
+          <h2 id="scenario-title">Misma inversión.<br><em>Cuatro lecturas posibles.</em></h2>
+          <p>Selecciona un escenario para recalcular el funnel, las tendencias y los resultados por canal. La inversión asignada permanece en US$355.497 y la reserva de US$299.503 no se mueve.</p>
+        </div>
+        <div class="scenario-options opciones" role="group" aria-label="Seleccionar escenario de resultados">
+          <button class="scenario-option opcion is-active" type="button" data-scenario="base" aria-pressed="true"><span>Base</span><strong>Benchmark actual</strong><small>Resultados proyectados sin variación</small></button>
+          <button class="scenario-option opcion scenario-option-positive" type="button" data-scenario="optimistic" aria-pressed="false"><span>Optimista</span><strong>+20% resultados</strong><small>Misma inversión, menor costo unitario</small></button>
+          <button class="scenario-option opcion scenario-option-negative" type="button" data-scenario="pessimistic" aria-pressed="false"><span>Pesimista</span><strong>−20% resultados</strong><small>Misma inversión, mayor costo unitario</small></button>
+          <button class="scenario-option opcion" type="button" data-scenario="attribution" aria-pressed="false"><span>Plataformas</span><strong>US$4 por registro</strong><small>Misma tasa registro→FTD por canal</small></button>
+        </div>
+        <aside class="attribution-note" id="attributionNote" aria-live="polite" hidden>
+          <strong>Cómo leer la atribución de plataformas</strong>
+          <p>Una <b>ventana de atribución</b> es el período después de ver o hacer clic en un anuncio durante el cual la plataforma puede adjudicarse un registro o FTD. Como cada plataforma aplica su propia ventana, un mismo usuario puede aparecer en más de un reporte. Este escenario usa un CPR atribuido promedio de US$4 y conserva la tasa registro→FTD de cada canal; sirve para leer los reportes de medios, no como total de usuarios únicos.</p>
+        </aside>
+      </section>
+
+      <div class="metric-grid" id="metricGrid" aria-live="polite"></div>
+
+      <section class="distribution-block" id="distribucion" aria-labelledby="distribution-title">
+        <div class="dashboard-subheading">
+          <div>
+            <h2 id="distribution-title">Dónde está el peso.<br><em>Cómo leerlo.</em></h2>
+          </div>
+          <p>Los gráficos responden a los filtros activos. Haz clic en un objetivo o un canal para profundizar esa lectura.</p>
+        </div>
+
+        <div class="distribution-grid">
+          <article class="insight-panel objective-panel">
+            <div class="insight-panel-heading">
+              <div><span>Mix estratégico</span><h3>Inversión por objetivo</h3></div>
+              <span class="chart-hint">Clic para filtrar</span>
+            </div>
+            <div class="objective-chart-layout">
+              <div class="objective-donut" id="objectiveDonut" role="img" aria-label="Distribución de inversión por objetivo"></div>
+              <div class="objective-legend" id="objectiveLegend"></div>
+            </div>
+          </article>
+
+          <article class="insight-panel ranking-panel">
+            <div class="insight-panel-heading">
+              <div><span>Concentración</span><h3>Ranking por canal</h3></div>
+              <span class="chart-hint" id="rankingSummary">Top 6</span>
+            </div>
+            <div class="ranking-list" id="channelRanking" aria-live="polite"></div>
+          </article>
+        </div>
+
+        <div class="flow-usage" aria-labelledby="usage-title">
+          <div class="flow-usage-heading">
+            <h3 id="usage-title">Del dato a<br>la decisión.</h3>
+          </div>
+          <ol class="flow-usage-steps">
+            <li><span>01</span><strong>Filtra</strong><p>Elige mes, etapa, objetivo o vertical.</p></li>
+            <li><span>02</span><strong>Compara</strong><p>Lee inversión ajustada, plan original y real por canal.</p></li>
+            <li><span>03</span><strong>Profundiza</strong><p>Abre cada medio para revisar KPI, formatos y notas.</p></li>
+            <li><span>04</span><strong>Optimiza</strong><p>Mueve presupuesto con las reglas de escalado.</p></li>
+          </ol>
+        </div>
+      </section>
+    </section>
+
+    <section class="investment section-light" id="inversion" aria-labelledby="investment-title">
+      <div class="section-heading section-heading-inline">
+        <div>
+          <h2 id="investment-title">Octubre real.<br>Después, escalera.</h2>
+        </div>
+        <p>Haz clic en un mes para aislarlo. Cada barra muestra la inversión ajustada y, debajo, el plan original del mes para comparar.</p>
+      </div>
+      <div class="chart-shell">
+        <div class="chart-toolbar">
+          <p id="chartTitle">Distribución por medio · Plan ajustado</p>
+          <div class="legend" id="chartLegend"></div>
+        </div>
+        <div class="monthly-chart" id="monthlyChart" role="img" aria-label="Inversión mensual ajustada apilada por objetivo"></div>
+      </div>
+
+      <section class="performance-results" id="resultados" aria-label="Funnel y tendencia de resultados esperados">
+        <div class="results-grid">
+          <article class="performance-panel funnel-panel">
+            <div class="performance-panel-heading">
+              <div><span>Funnel de medios y conversión</span><h3>Impresiones → FTD</h3></div>
+              <span id="funnelSelection">Plan ajustado</span>
+            </div>
+            <div class="funnel-scenario-options opciones" role="group" aria-label="Escenario aplicado al funnel">
+              <button class="scenario-option opcion funnel-scenario-option is-active" type="button" data-scenario="base" aria-pressed="true"><span>Base</span><strong>Benchmark</strong></button>
+              <button class="scenario-option opcion funnel-scenario-option" type="button" data-scenario="optimistic" aria-pressed="false"><span>Optimista</span><strong>+20%</strong></button>
+              <button class="scenario-option opcion funnel-scenario-option" type="button" data-scenario="pessimistic" aria-pressed="false"><span>Pesimista</span><strong>-20%</strong></button>
+              <button class="scenario-option opcion funnel-scenario-option" type="button" data-scenario="attribution" aria-pressed="false"><span>Plataformas</span><strong>CPR US$4</strong></button>
+            </div>
+            <div class="conversion-funnel" id="conversionFunnel" role="img" aria-label="Funnel esperado de impresiones, alcance, visitas, registros y FTD"></div>
+            <p class="results-assumption" id="funnelAssumption"></p>
+          </article>
+
+          <article class="performance-panel trend-panel">
+            <div class="performance-panel-heading">
+              <div><span>Tendencia mensual</span><h3>Resultados esperados</h3></div>
+              <div class="trend-legend" aria-label="Leyenda"><span><i class="register-swatch"></i>Registros</span><span><i class="ftd-swatch"></i>FTD</span></div>
+            </div>
+            <div class="results-trend" id="resultsTrend" role="img" aria-label="Tendencia mensual de registros y FTD"></div>
+            <p class="trend-summary" id="trendSummary"></p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section class="channels section-dark" id="canales" aria-labelledby="channels-title">
+      <div class="section-heading section-heading-inline">
+        <div>
+          <h2 id="channels-title">Un rol claro<br>por canal.</h2>
+        </div>
+        <p>Las tarjetas responden a los filtros activos. Abre cada una para ver formatos, lo real frente al plan original, KPI secundarios y notas.</p>
+      </div>
+      <div class="channel-grid" id="channelGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No hay canales que coincidan con estos filtros.</p>
+    </section>
+
+    <section class="flow-table-section section-light" aria-labelledby="table-title">
+      <div class="section-heading section-heading-inline">
+        <div>
+          <h2 id="table-title">El flow,<br>sin ruido.</h2>
+        </div>
+        <p>Una fila por canal sobre el período seleccionado, con la inversión ajustada junto al plan original y lo real. La vista completa cierra con la reserva y el plan total.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Canal</th><th>Objetivo</th><th>Inversión ajustada</th><th>Plan original</th><th>Real a la fecha</th><th>KPI</th><th>Resultado del escenario</th><th>Formatos</th>
+            </tr>
+          </thead>
+          <tbody id="flowTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="strategy section-light" id="calendario" aria-labelledby="calendar-title">
+      <div class="section-heading">
+        <h2 id="calendar-title">Temporalidades por mes.</h2>
+        <p>El calendario viene del flow maestro. Lo marcado como por confirmar se valida con el cliente antes de fijar fechas, y TopView se asigna a momentos especiales cuando existan.</p>
+      </div>
+      <div class="cal-grid" id="calendarGrid"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>RAZA.DO · Flow digital ajustado</span>
+    <span>RD +18 · Juego responsable</span>
+    <span>Capítulo 2 · corte 9 de noviembre de 2026</span>
+  </footer>
+
+  <script src="app-ajustado.js"></script>
+</body>
+</html>
