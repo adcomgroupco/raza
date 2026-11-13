@@ -1,0 +1,96 @@
+/* ============================================================================
+   Raza.do · El coro pal Festival (simulador de escenarios)
+   Capa de documento sobre el sistema Adcom y ajustado.css.
+   Solo geometría: sin tokens propios ni colores en hex; todo sale de var(--…).
+   No usar `margin` abreviado en hijos directos de una franja: pisa el centrado.
+   ========================================================================= */
+.co-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:var(--s-4)}
+.co-card{display:grid; gap:var(--s-3); align-content:start; padding:var(--s-4) var(--s-5) var(--s-5); background:var(--raised); border:1px solid var(--rule); border-top:6px solid var(--tone); border-radius:var(--radius)}
+.co-card header span{color:var(--ink-muted); font-size:.78rem; font-weight:700}
+.co-card h3{margin:2px 0 0; font-size:1.35rem}
+.co-card-figures{display:grid; gap:0; margin:0}
+.co-card-figures div{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:10px 0; border-top:1px solid var(--rule)}
+.co-card-figures dt{color:var(--ink-secondary); font-size:.88rem}
+.co-card-figures dd{margin:0; text-align:right; font-size:1.25rem; font-weight:800; font-variant-numeric:tabular-nums}
+.co-card-figures dd small{display:block; color:var(--ink-muted); font-size:.78rem; font-weight:500}
+.co-meter{position:relative; height:12px; margin-top:var(--s-2); background:var(--sunken); border-radius:6px}
+.co-meter i{display:block; height:100%; background:var(--tone); border-radius:6px}
+.co-meter b,.co-meter em{position:absolute; top:-5px; width:2px; height:22px}
+.co-meter b{background:var(--ink)}
+.co-meter em{background:var(--ink-muted)}
+.co-ratio{margin:0; color:var(--ink-secondary); font-size:.92rem}
+.co-ratio strong{color:var(--ink); font-size:1.6rem; font-weight:800; margin-right:4px}
+.co-verdict{margin:0; font-size:.88rem; font-weight:700}
+.co-verdict.is-pos,.co-pos{color:var(--pos)}
+.co-verdict.is-neg,.co-neg{color:var(--neg)}
+.co-how{margin:0; padding-top:var(--s-3); border-top:1px solid var(--rule); color:var(--ink-muted); font-size:.82rem}
+
+.co-chart{margin-top:var(--s-3)}
+.co-chart svg{display:block; width:100%; height:auto; overflow:visible}
+.co-axis-label{fill:var(--ink-muted); font-size:13px; font-family:inherit}
+.co-strong{fill:var(--ink); font-weight:700}
+.co-bar-value{fill:var(--ink); font-size:14px; font-weight:700; font-family:inherit}
+.co-on-bar{fill:var(--serie-fg)}
+.co-grid{stroke:var(--rule); stroke-width:1}
+.co-line-invest{stroke:var(--ink-muted); stroke-width:2}
+.co-line-target{stroke:var(--ink); stroke-width:2; stroke-dasharray:6 5; fill:none}
+.co-line-linear{stroke-width:2.5; stroke-dasharray:3 6; fill:none; opacity:.75}
+.co-line-curve{stroke-width:3.5; fill:none}
+.co-dot{stroke:var(--raised); stroke-width:3}
+.co-legend{display:flex; flex-wrap:wrap; gap:var(--s-2) var(--s-4); margin:var(--s-3) 0 0; padding:0; list-style:none; color:var(--ink-secondary); font-size:.85rem}
+.co-key{display:inline-block; width:28px; height:0; margin-right:8px; vertical-align:middle; border-top:3px solid var(--ink)}
+.co-key-linear{border-top-style:dotted}
+.co-key-target{border-top:2px dashed var(--ink)}
+
+.co-real{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:var(--s-3); margin:var(--s-3) 0 0}
+.co-real div{padding:var(--s-3) var(--s-4); background:var(--sunken); border-radius:var(--radius)}
+.co-real dt{color:var(--ink-muted); font-size:.8rem}
+.co-real dd{margin:4px 0 0; font-weight:700; font-variant-numeric:tabular-nums}
+.co-real div:last-child dd{color:var(--pos)}
+
+.co-controls{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:var(--s-4); align-items:start; margin-inline:auto}
+.co-control{display:grid; gap:10px; margin:0; padding:var(--s-4); min-width:0; background:var(--raised); border:1px solid var(--rule); border-radius:var(--radius)}
+.co-control > span,.co-control legend{display:grid; gap:4px; font-weight:700; font-size:.92rem}
+.co-control legend{padding:0; float:left; width:100%}
+.co-control output{color:var(--accent-fg); font-size:1.5rem; font-weight:800; font-variant-numeric:tabular-nums; white-space:nowrap}
+.co-control input[type=range]{width:100%; min-width:0; margin:0; accent-color:var(--accent); cursor:pointer}
+.co-control small{color:var(--ink-muted); font-size:.8rem}
+.co-opciones{grid-template-columns:repeat(2,minmax(0,1fr)); clear:both}
+.co-opciones .opcion{padding:10px 12px}
+.co-opciones .opcion strong{font-size:.9rem}
+.co-form-actions{display:flex; flex-wrap:wrap; gap:var(--s-3); align-self:end}
+
+.co-curve-switch{grid-template-columns:repeat(2,minmax(0,260px)); margin-bottom:var(--s-4)}
+
+#mas-alla .aj-rules{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+#mas-alla .aj-rule:last-child:nth-child(3n+1){grid-column:auto}
+
+.co-sim-summary{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:var(--s-4); margin-top:var(--s-4)}
+.co-sim-tile{display:grid; gap:6px; padding:var(--s-4); background:var(--raised); border:1px solid var(--rule); border-left:6px solid var(--tone); border-radius:var(--radius)}
+.co-sim-tile span{color:var(--ink-muted); font-size:.8rem; font-weight:700}
+.co-sim-tile strong{font-size:1.9rem; font-weight:800; font-variant-numeric:tabular-nums; line-height:1.1}
+.co-sim-tile small{color:var(--ink-secondary); font-size:.85rem}
+.co-sim-tile small b{color:var(--ink)}
+.co-sim-tile .is-pos{color:var(--pos)}
+.co-sim-tile .is-neg{color:var(--neg)}
+.co-stack{display:grid; gap:var(--s-4)}
+.co-stack > .aj-panel{margin-top:0}
+
+.co-print-only{display:none}
+
+@media print{
+  @page{size:A4 landscape; margin:10mm}
+  body{zoom:.72}
+  .site-header,.skip-link,.hero-actions,.hero-visual,.co-controls,.co-curve-switch,#simulador > .section-heading{display:none !important}
+  .co-print-only{display:block}
+  .co-print-head h2{margin:0; font-size:1.6rem}
+  .co-print-head p{margin:6px 0 0; font-size:1rem}
+  .section-dark,.section-light{padding-block:8mm !important}
+  .hero{min-height:0 !important}
+  .section-heading{margin-bottom:6mm !important}
+  .co-card,.co-sim-tile,.aj-panel,.aj-rule,.co-real div,.co-cards{break-inside:avoid}
+  .co-cards,.co-sim-summary{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #mas-alla .aj-rules{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .co-meter,.co-meter i,.co-meter b,.co-meter em,.co-card,.co-sim-tile{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  #mas-alla{break-before:page}
+}

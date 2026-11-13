@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es" data-suelo="tinta">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simulador de escenarios de inversión de «El coro de Raza pal Festival»: depósitos esperados, valor depositado y por qué la campaña no se lee solo en transacciones.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Raza.do | El coro pal Festival</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/adcom.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ajustado.css">
+  <link rel="stylesheet" href="coro.css">
+  <script defer src="assets/js/adcom.js"></script>
+</head>
+<body class="flow-page">
+  <a class="skip-link" href="#escenarios">Saltar a los escenarios</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Volver al centro de documentos de Raza.do">
+      <span class="brand-mark">R</span>
+      <span>RAZA.DO</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="index.html">Documentos</a>
+      <a href="#escenarios">Escenarios</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#retornos">Retornos</a>
+      <a href="#mas-alla">Más allá del depósito</a>
+    </nav>
+    <span class="header-context">RD · 18+</span>
+  </header>
+
+  <main id="top">
+    <section class="hero section-dark" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">El coro de Raza<br><em>pal Festival.</em></h1>
+        <p class="hero-lead">Tres lecturas de la misma inversión en Meta y TikTok. Cuánto vuelve en depósitos según el costo por depósito que logremos, y por qué esta campaña no se mide solo en transacciones.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#escenarios">Ver los escenarios <svg class="ico" aria-hidden="true"><use href="#i-bajar"></use></svg></a>
+          <a class="button button-ghost" href="#simulador">Probar el simulador</a>
+          <button class="button button-ghost co-download" type="button">Descargar PDF <svg class="ico" aria-hidden="true"><use href="#i-bajar"></use></svg></button>
+        </div>
+        <dl class="hero-stats" aria-label="Datos de partida">
+          <div><dt>Inversión de la campaña</dt><dd>US$5,000</dd></div>
+          <div><dt>Depósito esperado</dt><dd>RD$1,500</dd></div>
+          <div><dt>Costo real por depósito hoy</dt><dd id="heroReal">—</dd></div>
+        </dl>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <figure class="media media-4-5 hero-image-shell">
+          <img src="assets/launch-energy.jpg" alt="">
+          <span class="media-motif"><i></i></span>
+          <figcaption>DOMINICANA GANA</figcaption>
+        </figure>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+      </div>
+    </section>
+
+    <section class="strategy section-light" id="escenarios" aria-labelledby="scenarios-title">
+      <div class="section-heading">
+        <h2 id="scenarios-title">Una inversión, tres lecturas.</h2>
+        <p>Lo único que cambia entre escenarios es cuánto nos cuesta cada primer depósito (FTD). En cada barra, la línea gris marca recuperar lo invertido y la línea negra, el objetivo de retorno.</p>
+      </div>
+
+      <div class="co-cards" id="scenarioCards" aria-live="polite"></div>
+
+      <article class="aj-panel">
+        <div class="aj-panel-head"><h3>Inversión frente a valor depositado</h3><span>Depósitos esperados × depósito promedio, en US$</span></div>
+        <div class="co-chart" id="valueChart" role="img"></div>
+        <p class="aj-note">Valor depositado = depósitos esperados × depósito promedio (RD$1,500 a RD$63 por dólar). Es lo que los nuevos jugadores ponen en su primer depósito, no la ganancia del operador.</p>
+      </article>
+
+      <article class="aj-panel">
+        <div class="aj-panel-head"><h3>De dónde sale el costo real</h3><span>Pauta siempre activa, 1 al 12 de noviembre</span></div>
+        <dl class="co-real">
+          <div><dt>Meta</dt><dd id="realMeta">—</dd></div>
+          <div><dt>TikTok</dt><dd id="realTiktok">—</dd></div>
+          <div><dt>Promedio Meta + TikTok</dt><dd id="realBlend">—</dd></div>
+        </dl>
+        <p class="aj-note">Lo reportan las plataformas y todavía no está validado contra los registros de Raza. Corresponde a la pauta siempre activa, sin boletería: con la mecánica del festival el costo puede subir.</p>
+      </article>
+    </section>
+
+    <section class="dashboard section-dark" id="simulador" aria-labelledby="sim-title">
+      <div class="section-heading section-heading-wide">
+        <div><h2 id="sim-title">Mueve los supuestos.</h2></div>
+        <p>Los escenarios, la comparación y la curva se recalculan al instante. Restablecer vuelve al planteamiento base.</p>
+      </div>
+      <div class="co-print-only co-print-head">
+        <h2>Supuestos de esta versión</h2>
+        <p id="printStamp"></p>
+      </div>
+
+      <form class="co-controls" onsubmit="return false" aria-label="Supuestos del simulador">
+        <label class="co-control">
+          <span>Inversión de la campaña <output id="investmentValue">US$5,000</output></span>
+          <input id="investment" type="range" min="1000" max="20000" step="500" value="5000">
+          <small>De US$1,000 a US$20,000</small>
+        </label>
+        <label class="co-control">
+          <span>Depósito promedio esperado <output id="depositValue">RD$1,500</output></span>
+          <input id="deposit" type="range" min="500" max="5000" step="100" value="1500">
+          <small>Un depósito alto también es una barrera de entrada</small>
+        </label>
+        <label class="co-control">
+          <span>Objetivo de retorno <output id="targetValue">+10%</output></span>
+          <input id="target" type="range" min="0" max="50" step="5" value="10">
+          <small>Cuánto debe superar lo depositado a la inversión</small>
+        </label>
+        <fieldset class="co-control">
+          <legend>Retornos decrecientes</legend>
+          <div class="opciones co-opciones" role="group" aria-label="Intensidad de la saturación">
+            <button class="opcion" type="button" data-saturation="linear"><strong>Regla de 3</strong></button>
+            <button class="opcion" type="button" data-saturation="soft"><strong>Suave</strong></button>
+            <button class="opcion is-active" type="button" data-saturation="medium"><strong>Media</strong></button>
+            <button class="opcion" type="button" data-saturation="strong"><strong>Fuerte</strong></button>
+          </div>
+          <small>Qué tanto rinde menos cada dólar adicional</small>
+        </fieldset>
+        <div class="co-form-actions">
+          <button class="reset-button" id="reset" type="button">Restablecer</button>
+          <button class="reset-button co-download" type="button">Descargar PDF con estos supuestos</button>
+        </div>
+      </form>
+
+      <div class="co-sim-summary" id="simSummary" aria-live="polite"></div>
+    </section>
+
+    <section class="investment section-light" id="retornos" aria-labelledby="returns-title">
+      <div class="section-heading section-heading-inline">
+        <div><h2 id="returns-title">Más inversión<br>no es más en proporción.</h2></div>
+        <p>La línea punteada es la regla de 3; la sólida, lo que suele pasar. La línea gris marca los depósitos que hacen falta para cumplir el objetivo de retorno.</p>
+      </div>
+
+      <div class="opciones co-curve-switch" role="group" aria-label="Escenario de la curva">
+        <button class="opcion is-active" type="button" data-curve="real"><span>Escenario 3</span><strong>Costo real de hoy</strong></button>
+        <button class="opcion" type="button" data-curve="projected"><span>Escenario 1</span><strong>Proyección inicial</strong></button>
+      </div>
+
+      <div class="co-stack">
+        <article class="aj-panel">
+          <div class="aj-panel-head"><h3>Depósitos según la inversión</h3><span>Retornos decrecientes</span></div>
+          <div class="co-chart" id="curveChart" role="img"></div>
+          <ul class="co-legend" aria-hidden="true">
+            <li><i class="co-key co-key-curve"></i>Con retornos decrecientes</li>
+            <li><i class="co-key co-key-linear"></i>Regla de 3</li>
+            <li><i class="co-key co-key-target"></i>Necesarios para el objetivo</li>
+          </ul>
+        </article>
+        <article class="aj-panel">
+          <div class="aj-panel-head"><h3>El depósito adicional cuesta más</h3><span>Por nivel de inversión</span></div>
+          <div class="aj-table-wrap">
+            <table class="aj-table">
+              <thead><tr><th>Inversión</th><th class="tnum">Regla de 3</th><th class="tnum">Esperados</th><th class="tnum">Costo promedio</th><th class="tnum">Costo del último</th><th class="tnum">Vuelve</th></tr></thead>
+              <tbody id="marginalBody"></tbody>
+            </table>
+          </div>
+          <p class="aj-note" id="curveNote"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="strategy section-light" id="mas-alla" aria-labelledby="beyond-title">
+      <div class="section-heading">
+        <h2 id="beyond-title">No es un ejercicio solo transaccional.</h2>
+        <p>Los depósitos son una parte del resultado. Leer la campaña solo por cuánto vuelve en el primer depósito deja por fuera buena parte de lo que construye.</p>
+      </div>
+      <ol class="aj-rules">
+        <li class="aj-rule"><span class="aj-rule-n">01</span><h3>También construye marca</h3><p>Raza.do es una marca nueva. Asociarla al Festival Presidente y a un coro que la gente canta suma reconocimiento, recordación y preferencia. Es menos tangible que un depósito, pero es lo que hace que la próxima campaña cueste menos y que más personas lleguen solas.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">02</span><h3>No funciona como regla de 3</h3><p>Duplicar la inversión no duplica los depósitos. Primero responde la audiencia más dispuesta y cada grupo siguiente cuesta más: es la ley de retornos decrecientes, y aplica a la publicidad como a cualquier inversión.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">03</span><h3>Es un primer ejercicio</h3><p>No hay historia de una dinámica de boletería en Raza. Esta campaña nos da la primera lectura real de cuánto cuesta, cómo convierte y qué tipo de jugador trae. Ese aprendizaje es parte del retorno y define cómo planear las siguientes.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">04</span><h3>Hay fricción en dos sentidos</h3><p>Por un lado, parte de la gente puede llegar solo por la boleta y no seguir jugando después, lo que sesga la calidad del jugador que entra. Por el otro, un depósito esperado de RD$1,500 es alto para un primer contacto y puede frenar a quien sí quería probar.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">05</span><h3>El primer depósito es solo el comienzo</h3><p>El valor de un jugador no se agota en su primer depósito: está en que vuelva a depositar y siga jugando los meses siguientes. Una campaña que trae jugadores que se quedan vale más de lo que muestra su primer depósito.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">06</span><h3>Parte del efecto no se ve en las plataformas</h3><p>Quien ve el coro y luego busca la marca, entra directo a la página o responde a otro canal no queda atribuido a esta campaña. Las plataformas cuentan solo lo que pueden rastrear; el impulso real es mayor.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">07</span><h3>Deja audiencias para lo que sigue</h3><p>Las personas que ven, interactúan o visitan la boletería quedan como audiencias para volver a hablarles de diciembre a febrero. Es un activo que la campaña deja y que abarata la conversión de las siguientes.</p></li>
+        <li class="aj-rule"><span class="aj-rule-n">08</span><h3>Los depósitos maduran con el tiempo</h3><p>No todos depositan el mismo día en que ven el anuncio: parte lo hace días después. La primera lectura siempre se queda corta, por eso la evaluación final se hace con la campaña ya cerrada.</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <span>RAZA.DO · El coro pal Festival</span>
+    <span>RD +18 · Juego responsable</span>
+    <span>Escenarios de inversión · noviembre de 2026</span>
+  </footer>
+
+  <script src="coro.js"></script>
+</body>
+</html>

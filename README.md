@@ -14,6 +14,7 @@ No requiere instalación ni proceso de compilación.
 - `index.html`: centro de documentos y punto de entrada del proyecto.
 - `flow-digital.html`: flow digital interactivo con filtros, mix por objetivo, ranking por canal, funnel de registros→FTD y tendencia mensual de resultados.
 - `flow-digital-ajustado.html`: capítulo 2 del flow, ajustado al gasto real (corte 9 de noviembre de 2026): real frente a plan, reglas de escalado, reserva sin asignar y calendario. Sus datos y gráficos viven en `app-ajustado.js` y su capa de diseño en `ajustado.css`.
+- `coro-festival.html`: simulador de escenarios de inversión de «El coro de Raza pal Festival» (proyección inicial, objetivo de retorno y costo real), retornos decrecientes y lectura más allá del depósito. Datos y gráficos en `coro.js`; capa de diseño en `coro.css`.
 - `tendencias-busqueda.html`: análisis interactivo de tendencias de búsqueda para lotería, casino, apuestas deportivas y verticales específicas en República Dominicana.
 - `styles.css`: capa de diseño de `flow-digital.html`, sobre el sistema Adcom.
 - `app.js`: datos, filtros, gráficos y vistas interactivas del flow.
